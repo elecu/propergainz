@@ -137,6 +137,17 @@
             position: relative;
         }
 
+        .hero-greeting {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--cyan);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            animation: slideDown 1s ease-out;
+            opacity: 0.85;
+        }
+
         .hero h1 {
             font-size: 4rem;
             font-weight: 700;
@@ -258,29 +269,33 @@
 
         .about-content {
             display: flex;
-            align-items: center;
-            gap: 3rem;
-            max-width: 900px;
+            align-items: stretch;
+            gap: 3.5rem;
+            max-width: 960px;
             margin: 0 auto;
         }
 
         .about-text {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .about-photo {
             flex-shrink: 0;
-            width: 260px;
+            width: 280px;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
         }
 
         .about-photo img {
             width: 100%;
-            height: 420px;
-            object-fit: cover;
-            object-position: center top;
+            height: auto;
             display: block;
             border-left: 3px solid #00d9ff;
-            box-shadow: 0 0 40px rgba(0, 217, 255, 0.2);
+            box-shadow: -4px 0 30px rgba(0, 217, 255, 0.25), 0 0 60px rgba(0, 217, 255, 0.1);
         }
 
         .about p {
@@ -655,12 +670,12 @@
             }
 
             .about-photo {
-                width: 200px;
+                width: 220px;
                 margin: 0 auto;
             }
 
             .about-photo img {
-                height: 320px;
+                height: auto;
             }
 
             .hero h1 {
@@ -699,6 +714,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <p class="hero-greeting" id="hero-greeting">Hi, I'm Edwin</p>
             <h1 id="hero-title">Plant-Based Fitness Nutrition</h1>
             <p class="tagline" id="tagline">Vegetarian/Vegan strength nutrition. Personalized. Simple.</p>
         </div>
@@ -838,6 +854,7 @@
 
         const translations = {
             en: {
+                'hero-greeting': "Hi, I'm Edwin",
                 'hero-title': 'Plant-Based Fitness Nutrition',
                 'tagline': 'Vegetarian/Vegan strength nutrition. Personalized. Simple.',
                 'about-title': 'About Me',
@@ -875,6 +892,7 @@
                 'footer': 'Plant-Based Fitness Nutrition © 2025. All rights reserved.'
             },
             es: {
+                'hero-greeting': 'Hola, soy Edwin',
                 'hero-title': 'Nutrición Fitness Basada en Plantas',
                 'tagline': 'Nutrición de fuerza vegetariana/vegana. Personalizada. Simple.',
                 'about-title': 'Sobre Mí',
