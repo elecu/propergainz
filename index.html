@@ -256,6 +256,33 @@
             transform: translateY(0);
         }
 
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-photo {
+            flex-shrink: 0;
+            width: 260px;
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            border-left: 3px solid #00d9ff;
+            box-shadow: 0 0 40px rgba(0, 217, 255, 0.2);
+        }
+
         .about p {
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
@@ -623,6 +650,19 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column-reverse;
+            }
+
+            .about-photo {
+                width: 200px;
+                margin: 0 auto;
+            }
+
+            .about-photo img {
+                height: 320px;
+            }
+
             .hero h1 {
                 font-size: 2.2rem;
             }
@@ -667,13 +707,19 @@
     <!-- About Section -->
     <section class="about" id="about">
         <h2 id="about-title">About Me</h2>
-        <p id="about-p1">
-            I have a PhD in Physics and hold certifications as a Professional Weight Training Coach and Sports Nutritionist from WABBA International Bodybuilding and Fitness Limited. I combine scientific rigor with practical coaching for vegetarian/vegan athletes and fitness enthusiasts
-        </p>
-        <p id="about-p2">
-            Whether you follow a vegetarian or vegan diet, I'll design simple, effective nutrition plans to help you achieve your fitness goals
-        </p>
-        
+        <div class="about-content">
+            <div class="about-text">
+                <p id="about-p1">
+                    I have a PhD in Physics and hold certifications as a Professional Weight Training Coach and Sports Nutritionist from WABBA International Bodybuilding and Fitness Limited. I combine scientific rigor with practical coaching for vegetarian/vegan athletes and fitness enthusiasts
+                </p>
+                <p id="about-p2">
+                    Whether you follow a vegetarian or vegan diet, I'll design simple, effective nutrition plans to help you achieve your fitness goals
+                </p>
+            </div>
+            <div class="about-photo">
+                <img src="pt-photo.jpg" alt="Edwin Herrera — Plant-Based Fitness Coach" />
+            </div>
+        </div>
     </section>
 
  <!-- Services Section -->
