@@ -351,9 +351,18 @@
         }
 
         .service-icon {
-            font-size: 2.5rem;
             margin-bottom: 1rem;
             display: inline-block;
+        }
+
+        .service-icon svg {
+            width: 2.5rem;
+            height: 2.5rem;
+            stroke: var(--cyan);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .service-card h3 {
@@ -372,9 +381,15 @@
         /* Pricing Section */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
+        }
+
+        @media (min-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
 
         .price-card {
@@ -741,19 +756,19 @@
         <h2 id="services-title">What I Offer</h2>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">🎯</div>
+                <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
                 <h3 id="service1-title">Personalized Nutrition Plans</h3>
                 <p id="service1-desc">Customized meal plans built around your goals and preferences—completely tailored, no generic templates.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">📈</div>
-                <h3 id="service2-title">Progress Tracking & Monthly Adjustments</h3>
-                <p id="service2-desc">Regular check-ins to review your progress and tailor your nutrition plan each month, ensuring your diet evolves alongside your results.</p>
+                <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 19h16"/><rect x="6" y="11" width="3" height="8"/><rect x="11" y="7" width="3" height="12"/><rect x="16" y="3" width="3" height="16"/></svg></div>
+                <h3 id="service2-title">Scientific Training Programming</h3>
+                <p id="service2-desc">Customized workout routines tailored to your schedule and goals. Structured volume, intensity, and progressive overload—integrated with Repstack to log your data.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">🌱</div> <!-- Volvemos a la plantita o 🍽️ para comida -->
+                <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22V12"/><path d="M12 12C12 12 4 11 4 4C11 4 12 12 12 12Z"/><path d="M12 12C12 12 20 11 20 4C13 4 12 12 12 12Z"/></svg></div>
                 <h3 id="service3-title">Exclusively for Vegetarians & Vegans</h3>
-                <p id="service3-desc">Specialized coaching exclusively for vegetarians and vegans. Strength, performance, and body composition on a plant-based diet.</p>
+                <p id="service3-desc">Specialized coaching exclusively for plant-based fitness. Optimize your body composition, strength, and health without compromise.</p>
             </div>
         </div>
     </section>
@@ -762,19 +777,24 @@
         <h2 id="pricing-title">Pricing</h2>
         <div class="pricing-grid">
             <div class="price-card">
-                <h3 id="price1-title">Initial Assessment & Plan</h3>
+                <h3 id="price1-title">Nutrition Plan Only</h3>
                 <div class="price" id="price1-amount">£40</div>
-                <div class="price-description" id="price1-desc">Comprehensive analysis of your goals, lifestyle, and nutritional needs, plus your first fully customized meal plans.</div>
+                <div class="price-description" id="price1-desc">Comprehensive analysis of your lifestyle and goals, plus your first fully customized plant-based meal plans. (Updates: £35 / 4 weeks).</div>
             </div>
             <div class="price-card">
-                <h3 id="price2-title">Progress Review & Update</h3>
-                <div class="price" id="price2-amount">£35</div>
-                <div class="price-description" id="price2-desc">A complete progress check and tailored adjustments to your plan—recommended every 4 weeks to prevent metabolic adaptation and keep your results moving forward.</div>
+                <h3 id="price-routine-title">Training Programming Only</h3>
+                <div class="price" id="price-routine-amount">£30</div>
+                <div class="price-description" id="price-routine-desc">Customized workout routines built for your goals and equipment. Structured progressive overload managed via Repstack. (Updates: £20 / 4 weeks).</div>
             </div>
             <div class="price-card">
-                <h3 id="price3-title">3-Phase Periodisation Bundle</h3>
-                <div class="price" id="price3-amount">£95</div>
-                <div class="price-description" id="price3-desc">Pre-pay for three structured updates. The scientifically optimized choice for a full 12-week transformation block. Save £10.</div>
+                <h3 id="price2-title">Full Program (Nutrition + Training)</h3>
+                <div class="price" id="price2-amount">£60</div>
+                <div class="price-description" id="price2-desc">The complete package: Tailored nutrition plus a fully structured workout routine designed for your goals and metrics. (Updates: £45 / 4 weeks).</div>
+            </div>
+            <div class="price-card">
+                <h3 id="price3-title">3-Phase Periodisation Bundle (Full Program)</h3>
+                <div class="price" id="price3-amount">£130</div>
+                <div class="price-description" id="price3-desc">Pre-pay for the complete 12-week transformation block (Nutrition + Training) including the initial plan and two structured monthly updates. The smartest choice to optimize your progress. Save £20.</div>
             </div>
         </div>
     </section>
@@ -861,21 +881,24 @@
                 'about-p3': "Certified by: WABBA International Bodybuilding and Fitness Limited",
                 'services-title': 'What I Offer',
                 'service1-title': 'Personalized Nutrition Plans',
-                'service1-desc': 'Two customized menus based on your goals and dietary preferences — no generic templates.',
-                'service2-title': 'Progress Tracking & Monthly Adjustments',
-                'service2-desc': 'Regular check-ins to review your progress and tailor your plan each month, ensuring your program evolves alongside your results.',
+                'service1-desc': 'Customized meal plans built around your goals and preferences—completely tailored, no generic templates.',
+                'service2-title': 'Scientific Training Programming',
+                'service2-desc': 'Customized workout routines tailored to your schedule and goals. Structured volume, intensity, and progressive overload—integrated with Repstack to log your data.',
                 'service3-title': 'Exclusively for Vegetarians & Vegans',
-                'service3-desc': 'Specialized coaching exclusively for vegetarians and vegans. Strength, performance, and body composition on a plant-based diet.',
-                'pricing-title': 'Pricing',
-                'price1-title': 'Initial Assessment & Plan',
+                'service3-desc': 'Specialized coaching exclusively for plant-based fitness. Optimize your body composition, strength, and health without compromise.',
+                'pricing-title': 'Coaching Options',
+                'price1-title': 'Nutrition Plan Only',
                 'price1-amount': '£40',
-                'price1-desc': 'Comprehensive analysis of your goals, lifestyle, and nutritional needs, plus your first fully customized meal plans.',
-                'price2-title': 'Progress Review & Update',
-                'price2-amount': '£35',
-                'price2-desc': 'A complete progress check and tailored adjustments to your plan — recommended every 4 weeks to prevent metabolic adaptation and keep your results moving forward.',
-                'price3-title': '3-Phase Periodisation Bundle',
-                'price3-amount': '£95',
-                'price3-desc': 'Pre-pay for three structured updates. The scientifically optimized choice for a full 12-week transformation block. Save £10.',
+                'price1-desc': 'Comprehensive analysis of your lifestyle and goals, plus your first fully customized plant-based meal plans. (Updates: £35 / 4 weeks).',
+                'price-routine-title': 'Training Programming Only',
+                'price-routine-amount': '£30',
+                'price-routine-desc': 'Customized workout routines built for your goals and equipment. Structured progressive overload managed via Repstack. (Updates: £20 / 4 weeks).',
+                'price2-title': 'Full Program (Nutrition + Training)',
+                'price2-amount': '£60',
+                'price2-desc': 'The complete package: Tailored nutrition plus a fully structured workout routine designed for your goals and metrics. (Updates: £45 / 4 weeks).',
+                'price3-title': '3-Phase Periodisation Bundle (Full Program)',
+                'price3-amount': '£130',
+                'price3-desc': 'Pre-pay for the complete 12-week transformation block (Nutrition + Training) including the initial plan and two structured monthly updates. The smartest choice to optimize your progress. Save £20.',
                 'apps-intro-title': 'I Also Build Fitness Tools',
                 'apps-intro-desc': 'Beyond nutrition coaching, I develop free apps to support your fitness journey — use them alongside your plan.',
                 'repstack-desc': 'Built for bodybuilders — log workouts by muscle group, exercise type, and intensity zone. Track your progress, spot patterns, and ditch the static notebook. No install needed, runs right in your browser.',
@@ -899,20 +922,23 @@
                 'services-title': 'Qué Ofrezco',
                 'service1-title': 'Planes Nutricionales Personalizados',
                 'service1-desc': 'Planes de alimentación diseñados a partir de tus objetivos y preferencias — completamente adaptados, sin templates genéricos.',
-                'service2-title': 'Seguimiento y Ajustes Mensuales',
-                'service2-desc': 'Revisiones periódicas para evaluar tu progreso y ajustar tu plan cada mes, asegurando que tu alimentación evolucione junto con tus resultados.',
+                'service2-title': 'Programación de Entrenamiento Científico',
+                'service2-desc': 'Rutinas personalizadas según tu disponibilidad y metas. Volumen, intensidad y sobrecarga progresiva estructurada — integrado con Repstack para registrar tus cargas.',
                 'service3-title': 'Exclusivo para Vegetarianos y Veganos',
                 'service3-desc': 'Coaching especializado únicamente para atletas plant-based — fuerza, rendimiento y composición corporal sin productos animales.',
-                'pricing-title': 'Precios',
-                'price1-title': 'Evaluación Inicial y Plan',
+                'pricing-title': 'Opciones de Coaching',
+                'price1-title': 'Solo Plan de Nutrición',
                 'price1-amount': '$920 MXN',
-                'price1-desc': 'Análisis completo de tus objetivos, estilo de vida y necesidades nutricionales, más tus primeros planes de alimentación completamente personalizados.',
-                'price2-title': 'Revisión de Progreso y Actualización',
-                'price2-amount': '$800 MXN',
-                'price2-desc': 'Revisión completa de tu progreso y ajustes personalizados a tu plan — recomendada cada 4 semanas para evitar la adaptación metabólica y mantener tus resultados avanzando.',
-                'price3-title': 'Paquete de Periodización en 3 Fases',
-                'price3-amount': '$2,190 MXN',
-                'price3-desc': 'Prepaga tres actualizaciones estructuradas. La opción científicamente optimizada para un bloque completo de transformación de 12 semanas. Ahorra $230 MXN.',
+                'price1-desc': 'Análisis completo de tus necesidades y tus primeros planes de alimentación 100% personalizados. (Actualizaciones: $800 MXN cada 4 semanas).',
+                'price-routine-title': 'Solo Programación de Entrenamiento',
+                'price-routine-amount': '$690 MXN',
+                'price-routine-desc': 'Rutinas de entrenamiento personalizadas según tus metas y equipo disponible. Sobrecarga progresiva gestionada a través de Repstack. (Actualizaciones: $460 MXN cada 4 semanas).',
+                'price2-title': 'Programa Integral (Nutrición + Entreno)',
+                'price2-amount': '$1,380 MXN',
+                'price2-desc': 'El paquete completo: Nutrición a medida más una rutina de entrenamiento estructurada matemáticamente para tus objetivos. (Actualizaciones: $1,050 MXN cada 4 semanas).',
+                'price3-title': 'Paquete de Periodización en 3 Fases (Programa Completo)',
+                'price3-amount': '$2,990 MXN',
+                'price3-desc': 'Prepaga el bloque completo de transformación de 12 semanas (Nutrición + Entrenamiento), incluyendo el plan inicial y dos actualizaciones mensuales estructuradas. La opción más inteligente para optimizar tu progreso. Ahorra $400 MXN.',
                 'apps-intro-title': 'También Desarrollo Herramientas Fitness',
                 'apps-intro-desc': 'Además del coaching nutricional, desarrollo apps gratuitas para apoyar tu entrenamiento — úsalas junto con tu plan.',
                 'repstack-desc': 'Diseñada para bodybuilders — registra entrenamientos por grupo muscular, tipo de ejercicio y zona de intensidad. Sigue tu progreso, detecta patrones y olvídate de la libreta. Corre directo en tu navegador, sin instalación.',
