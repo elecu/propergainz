@@ -606,6 +606,147 @@
             box-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
         }
 
+        /* Payment Section */
+        .payment-section {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: var(--black);
+            position: relative;
+        }
+
+        .payment-section h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-note {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            margin: 1.5rem auto 2.5rem;
+            max-width: 700px;
+            opacity: 0.9;
+        }
+
+        .payment-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .payment-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.8rem;
+            border: 1px solid rgba(0,217,255,0.3);
+            background: var(--gray-dark);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            border-radius: 0;
+            transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+            text-transform: uppercase;
+        }
+
+        .payment-btn:hover {
+            border-color: var(--cyan);
+            box-shadow: 0 0 25px rgba(0,217,255,0.25);
+            background: rgba(0,217,255,0.08);
+        }
+
+        .payment-btn svg {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+
+        .payment-btn-qr {
+            display: none;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .payment-btn-qr img {
+            max-width: 200px;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        @media (min-width: 768px) {
+            .payment-btn-qr {
+                display: block;
+            }
+        }
+
+        /* Forms Section */
+        .forms-section {
+            background: var(--gray-dark);
+            padding: 3rem;
+            border-radius: 0;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .forms-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+        }
+
+        .forms-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .forms-section h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .forms-section p {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .form-btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: transparent;
+            border: 1px solid rgba(0,217,255,0.3);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            border-radius: 0;
+            transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .form-btn:hover {
+            border-color: var(--cyan);
+            box-shadow: 0 0 25px rgba(0,217,255,0.25);
+            background: rgba(0,217,255,0.08);
+        }
+
         /* Contact Section */
         .contact {
             text-align: center;
@@ -808,6 +949,29 @@ Only</h3>
         </div>
     </section>
 
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <h2 id="payment-heading">Ready to Start?</h2>
+        <p class="payment-note" id="payment-note">Want to book a session or have questions? Email me or pay directly here.</p>
+        <div class="payment-buttons">
+            <a href="https://paypal.me/el3cu" target="_blank" class="payment-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 12c0-3.3 2.7-6 6-6 1.5 0 2.9.6 4 1.5M8 12h8M8 16h8M6 20h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2Z"/>
+                </svg>
+                PayPal
+            </a>
+            <a href="https://buymeacoffee.com/cowboyedwin" target="_blank" class="payment-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7 4h10v2H7V4zm1 3h8v9c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2V7zm-1 12h10v2H7v-2z" fill="#FFD700"/>
+                </svg>
+                Buy Me a Coffee
+            </a>
+        </div>
+        <div class="payment-btn-qr" id="bmac-qr-container">
+            <img src="bmac-qr.png" alt="Buy Me a Coffee QR" />
+        </div>
+    </section>
+
     <!-- Apps Intro -->
     <div class="apps-intro">
         <h2 id="apps-intro-title">I Also Build Fitness Tools</h2>
@@ -832,7 +996,15 @@ Only</h3>
     <!-- Contact Section -->
     <section id="contact">
         <h2 id="contact-title">Get In Touch</h2>
-        <p id="contact-subtitle" style="color: var(--gray-light); font-size: 1.1rem; margin-top: 1rem; margin-bottom: 0;">Got questions or want to kick off your nutrition plan? I'm here. Send me a message and let's talk.</p>
+        <p id="contact-subtitle" style="color: var(--gray-light); font-size: 1.1rem; margin-top: 1rem; margin-bottom: 2rem;">Got questions or want to kick off your nutrition plan? I'm here. Send me a message and let's talk.</p>
+
+        <!-- Forms Section -->
+        <div class="forms-section">
+            <h3 id="forms-heading">New Client? Start Here</h3>
+            <p id="forms-subtext">Fill out this quick form so I have all the info I need before our first session.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsRVgwCA-4_NEcKDJ22uuVhhF9xS9WVLoZwZFsKsXu6JYi2A/viewform?usp=header" target="_blank" class="form-btn" id="form-btn-link">Start Here</a>
+        </div>
+
         <div class="contact-info">
             <div class="contact-item">
                 <div class="contact-label" id="email-label">Email</div>
@@ -866,7 +1038,7 @@ Only</h3>
         }, observerOptions);
 
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.service-card, .price-card, .about, .contact-info, .repstack, .ojasfuel').forEach(el => {
+            document.querySelectorAll('.service-card, .price-card, .about, .contact-info, .repstack, .ojasfuel, .forms-section').forEach(el => {
                 scrollObserver.observe(el);
             });
         });
@@ -913,6 +1085,11 @@ Only</h3>
                 'repstack-desc': 'Built for bodybuilders — log workouts by muscle group, exercise type, and intensity zone. Track your progress, spot patterns, and ditch the static notebook. No install needed, runs right in your browser.',
                 'ojasfuel-desc': 'Scan a barcode or search any food — instantly know if it\'s vegan, vegetarian, or neither. No label squinting required. Calculate exactly how much you need to hit your protein or calorie goal, find equivalent foods. Oh yes, fuel!',
                 'ojasfuel-cta': 'Try OjasFuel →',
+                'payment-heading': 'Ready to Start?',
+                'payment-note': 'Want to book a session or have questions? Email me or pay directly here.',
+                'forms-heading': 'New Client? Start Here',
+                'forms-subtext': 'Fill out this quick form so I have all the info I need before our first session.',
+                'form-btn-link': 'Start Here',
                 'contact-title': 'Get In Touch',
                 'contact-subtitle': "Got questions or want to kick off your nutrition plan? I'm here. Send me a message and let's talk.",
                 'email-label': 'Email',
@@ -953,6 +1130,11 @@ Only</h3>
                 'repstack-desc': 'Diseñada para bodybuilders — registra entrenamientos por grupo muscular, tipo de ejercicio y zona de intensidad. Sigue tu progreso, detecta patrones y olvídate de la libreta. Corre directo en tu navegador, sin instalación.',
                 'ojasfuel-desc': 'Busca un alimento por nombre o escanea su código de barras — al instante sabrás si es vegano, vegetariano o ninguno de los dos. Sin leer etiquetas diminutas. Calcula cuánto necesitas para llegar a tu meta de proteína o calorías, encuentra alimentos equivalentes e identifica productos con una foto.',
                 'ojasfuel-cta': 'Probar OjasFuel →',
+                'payment-heading': '¿Listo para Comenzar?',
+                'payment-note': '¿Quieres agendar o tienes dudas? Escríbeme o paga directo aquí.',
+                'forms-heading': '¿Nuevo Cliente? Empieza Aquí',
+                'forms-subtext': 'Llena este breve formulario para que tenga toda la información antes de nuestra primera sesión.',
+                'form-btn-link': 'Empieza Aquí',
                 'contact-title': 'Ponte en Contacto',
                 'contact-subtitle': '¿Tienes dudas o quieres arrancar con tu plan de nutrición? Estoy aquí. Mándame un mensaje y platicamos.',
                 'email-label': 'Email',
@@ -977,6 +1159,16 @@ Only</h3>
                     element.textContent = translations[currentLanguage][key];
                 }
             });
+
+            // Update form button href based on language
+            const formBtn = document.getElementById('form-btn-link');
+            if (formBtn) {
+                const formUrls = {
+                    en: 'https://docs.google.com/forms/d/e/1FAIpQLSfsRVgwCA-4_NEcKDJ22uuVhhF9xS9WVLoZwZFsKsXu6JYi2A/viewform?usp=header',
+                    es: 'https://docs.google.com/forms/d/e/1FAIpQLSdvhdwBpgGPf2QDR_OU0lLiPJVYhA-TSIHFNa1jZai63i3_bg/viewform?usp=header'
+                };
+                formBtn.href = formUrls[currentLanguage];
+            }
         }
 
         function scrollToSection(sectionId) {
