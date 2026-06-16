@@ -98,6 +98,9 @@
             background: linear-gradient(135deg, var(--black) 0%, #0a0a0a 100%);
             position: relative;
             overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
         }
 
         .hero::before {
@@ -640,7 +643,7 @@
             gap: 0.75rem;
             padding: 1rem 1.8rem;
             border: 1px solid rgba(0,217,255,0.3);
-            background: var(--gray-dark);
+            background: rgba(26, 26, 26, 0.7);
             color: var(--white);
             text-decoration: none;
             font-size: 0.95rem;
@@ -657,27 +660,21 @@
             background: rgba(0,217,255,0.08);
         }
 
-        .payment-btn svg {
-            width: 1.2rem;
-            height: 1.2rem;
+        .payment-logo {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)) brightness(1.1) contrast(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .payment-logo {
+                height: 28px;
+            }
         }
 
         .payment-btn-qr {
             display: none;
-            margin-top: 1rem;
-            text-align: center;
-        }
-
-        .payment-btn-qr img {
-            max-width: 200px;
-            width: 100%;
-            opacity: 0.9;
-        }
-
-        @media (min-width: 768px) {
-            .payment-btn-qr {
-                display: block;
-            }
         }
 
         /* Forms Section */
@@ -811,6 +808,148 @@
             text-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
         }
 
+        /* Contact Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--gray-dark);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 0;
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 217, 255, 0.1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--cyan);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+
+        .modal-title {
+            color: var(--cyan);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 0 1.5rem 0;
+            text-align: center;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .contact-form label {
+            color: var(--cyan);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background: var(--black);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 0;
+            color: var(--white);
+            padding: 0.75rem;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--cyan);
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--cyan);
+            color: var(--black);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            box-shadow: 0 0 25px rgba(0, 217, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-status {
+            padding: 1rem;
+            border-radius: 0;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .form-status.success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            border: 1px solid #22c55e;
+        }
+
+        .form-status.error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border: 1px solid #ef4444;
+        }
+
         /* Footer */
         footer {
             background: var(--gray-dark);
@@ -917,6 +1056,28 @@
             </div>
         </div>
     </section>
+
+    <!-- Apps Intro -->
+    <div class="apps-intro">
+        <h2 id="apps-intro-title">I Also Build Fitness Tools</h2>
+        <p id="apps-intro-desc">Beyond nutrition coaching, I develop free apps to support your fitness journey — use them alongside your plan.</p>
+    </div>
+
+    <!-- OjasFuel Section -->
+    <section class="ojasfuel" id="ojasfuel">
+        <img id="ojasfuel-title" src="logo_text2.png" alt="OjasFuel" style="height: 62px; max-width: 251px; width: auto; margin-bottom: 1.5rem; display: block; margin-left: auto; margin-right: auto;">
+        <p id="ojasfuel-desc">Scan a barcode or search any food — instantly know if it's vegan, vegetarian, or neither. No label squinting required. Calculate exactly how much you need to hit your protein or calorie goal, find equivalent foods. Oh yes, fuel!</p>
+        <p class="ojasfuel-powered">Powered by OpenFoodFacts</p>
+        <a href="https://ojasfuel.streamlit.app/" target="_blank" class="ojasfuel-link" id="ojasfuel-cta">Try OjasFuel →</a>
+    </section>
+
+    <!-- Repstack Section -->
+    <section class="repstack" id="repstack">
+        <img id="repstack-title" src="repstack.png" alt="RepStack" style="height: 90px; max-width: 340px; width: auto; margin-bottom: 1.5rem; display: block; margin-left: auto; margin-right: auto;">
+        <p id="repstack-desc">Built for bodybuilders — log workouts by muscle group, exercise type, and intensity zone. Track your progress, spot patterns, and ditch the static notebook. No install needed, runs right in your browser.</p>
+        <a href="https://rep-stack.pages.dev/" target="_blank" class="repstack-link">Visit Repstack →</a>
+    </section>
+
 <!-- Pricing Section -->
     <section id="pricing">
         <h2 id="pricing-title">Coaching Options</h2>
@@ -955,16 +1116,10 @@ Only</h3>
         <p class="payment-note" id="payment-note">Want to book a session or have questions? Email me or pay directly here.</p>
         <div class="payment-buttons">
             <a href="https://paypal.me/el3cu" target="_blank" class="payment-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 12c0-3.3 2.7-6 6-6 1.5 0 2.9.6 4 1.5M8 12h8M8 16h8M6 20h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2Z"/>
-                </svg>
-                PayPal
+                <img src="paypal.png" alt="PayPal" class="payment-logo" />
             </a>
             <a href="https://buymeacoffee.com/cowboyedwin" target="_blank" class="payment-btn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M7 4h10v2H7V4zm1 3h8v9c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2V7zm-1 12h10v2H7v-2z" fill="#FFD700"/>
-                </svg>
-                Buy Me a Coffee
+                <img src="BuyMeACoffee.png" alt="Buy Me a Coffee" class="payment-logo" />
             </a>
         </div>
         <div class="payment-btn-qr" id="bmac-qr-container">
@@ -972,48 +1127,19 @@ Only</h3>
         </div>
     </section>
 
-    <!-- Apps Intro -->
-    <div class="apps-intro">
-        <h2 id="apps-intro-title">I Also Build Fitness Tools</h2>
-        <p id="apps-intro-desc">Beyond nutrition coaching, I develop free apps to support your fitness journey — use them alongside your plan.</p>
+    <!-- New Client Info Section -->
+    <div style="text-align: center; padding: 3rem 2rem; background: var(--black); max-width: 700px; margin: 0 auto;">
+        <h3 id="forms-heading" style="color: var(--white); margin-bottom: 0.5rem;">New Client? Start Here</h3>
+        <p id="forms-subtext" style="color: var(--gray-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Fill out this quick form so I have all the info I need before our first session.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsRVgwCA-4_NEcKDJ22uuVhhF9xS9WVLoZwZFsKsXu6JYi2A/viewform?usp=header" target="_blank" class="form-btn" id="form-btn-link">Start Here</a>
     </div>
-
-    <!-- OjasFuel Section -->
-    <section class="ojasfuel" id="ojasfuel">
-        <img id="ojasfuel-title" src="logo_text2.png" alt="OjasFuel" style="height: 62px; max-width: 251px; width: auto; margin-bottom: 1.5rem; display: block; margin-left: auto; margin-right: auto;">
-        <p id="ojasfuel-desc">Scan a barcode or search any food — instantly know if it's vegan, vegetarian, or neither. No label squinting required. Calculate exactly how much you need to hit your protein or calorie goal, find equivalent foods. Oh yes, fuel!</p>
-        <p class="ojasfuel-powered">Powered by OpenFoodFacts</p>
-        <a href="https://ojasfuel.streamlit.app/" target="_blank" class="ojasfuel-link" id="ojasfuel-cta">Try OjasFuel →</a>
-    </section>
-
-    <!-- Repstack Section -->
-    <section class="repstack" id="repstack">
-        <img id="repstack-title" src="repstack.png" alt="RepStack" style="height: 90px; max-width: 340px; width: auto; margin-bottom: 1.5rem; display: block; margin-left: auto; margin-right: auto;">
-        <p id="repstack-desc">Built for bodybuilders — log workouts by muscle group, exercise type, and intensity zone. Track your progress, spot patterns, and ditch the static notebook. No install needed, runs right in your browser.</p>
-        <a href="https://rep-stack.pages.dev/" target="_blank" class="repstack-link">Visit Repstack →</a>
-    </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2 id="contact-title">Get In Touch</h2>
-        <p id="contact-subtitle" style="color: var(--gray-light); font-size: 1.1rem; margin-top: 1rem; margin-bottom: 2rem;">Got questions or want to kick off your nutrition plan? I'm here. Send me a message and let's talk.</p>
-
-        <!-- Forms Section -->
-        <div class="forms-section">
-            <h3 id="forms-heading">New Client? Start Here</h3>
-            <p id="forms-subtext">Fill out this quick form so I have all the info I need before our first session.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsRVgwCA-4_NEcKDJ22uuVhhF9xS9WVLoZwZFsKsXu6JYi2A/viewform?usp=header" target="_blank" class="form-btn" id="form-btn-link">Start Here</a>
-        </div>
-
-        <div class="contact-info">
-            <div class="contact-item">
-                <div class="contact-label" id="email-label">Email</div>
-                <div class="contact-value"><a href="mailto:edwinh.coaching@gmail.com">edwinh.coaching@gmail.com</a></div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-label" id="linkedin-label">LinkedIn</div>
-                <div class="contact-value"><a href="https://www.linkedin.com/in/ed-herrera/" target="_blank">linkedin.com/in/ed-herrera</a></div>
-            </div>
+        <p id="contact-subtitle" style="color: var(--gray-light); font-size: 1.1rem; margin: 1rem auto 2rem; text-align: center; max-width: 700px;">Got questions or want to kick off your nutrition plan? I'm here. Send me a message and let's talk.</p>
+        <div style="text-align: center;">
+            <a href="mailto:edwinh.coaching@gmail.com" class="form-btn" style="display: inline-block;">Send Message</a>
         </div>
     </section>
 
@@ -1038,7 +1164,7 @@ Only</h3>
         }, observerOptions);
 
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.service-card, .price-card, .about, .contact-info, .repstack, .ojasfuel, .forms-section').forEach(el => {
+            document.querySelectorAll('.service-card, .price-card, .about, .contact-info, .repstack, .ojasfuel').forEach(el => {
                 scrollObserver.observe(el);
             });
         });
@@ -1096,6 +1222,15 @@ Only</h3>
                 'linkedin-label': 'LinkedIn',
                 'based-label': 'Based In',
                 'based-city': 'Durham, United Kingdom',
+                'open-contact-modal': 'Send Message',
+                'modal-title-text': 'Send a Message',
+                'cf-name-label': 'Name',
+                'cf-email-label': 'Your Email',
+                'cf-message-label': 'Message',
+                'cf-submit': 'Send',
+                'cf-sending': 'Sending…',
+                'cf-success': 'Message sent! I\'ll get back to you soon.',
+                'cf-error': 'Something went wrong. Please try again or email me directly.',
                 'footer': 'Plant-Based Nutrition & Training © 2026. All rights reserved.'
             },
             es: {
@@ -1141,6 +1276,15 @@ Only</h3>
                 'linkedin-label': 'LinkedIn',
                 'based-label': 'Basado en',
                 'based-city': 'Durham, Reino Unido',
+                'open-contact-modal': 'Enviar Mensaje',
+                'modal-title-text': 'Enviar un Mensaje',
+                'cf-name-label': 'Nombre',
+                'cf-email-label': 'Tu Email',
+                'cf-message-label': 'Mensaje',
+                'cf-submit': 'Enviar',
+                'cf-sending': 'Enviando…',
+                'cf-success': 'Mensaje enviado. Te respondo pronto.',
+                'cf-error': 'Algo salió mal. Inténtalo de nuevo o escríbeme directamente.',
                 'footer': 'Nutrición y Entrenamiento Basado en Plantas © 2026. Todos los derechos reservados.'
             }
         };
@@ -1174,6 +1318,59 @@ Only</h3>
         function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
         }
+
+        function openContactModal() {
+            document.getElementById('contact-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contact-modal').classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('form-status').style.display = 'none';
+            document.getElementById('contact-form').reset();
+        }
+
+        function closeModalOnOverlay(e) {
+            if (e.target.id === 'contact-modal') closeContactModal();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && document.getElementById('contact-modal').classList.contains('active')) {
+                closeContactModal();
+            }
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('cf-submit');
+            const status = document.getElementById('form-status');
+            submitBtn.disabled = true;
+            submitBtn.textContent = translations[currentLanguage]['cf-sending'] || 'Sending…';
+            try {
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: new FormData(this)
+                });
+                const data = await res.json();
+                status.style.display = 'block';
+                if (data.success) {
+                    status.className = 'form-status success';
+                    status.textContent = translations[currentLanguage]['cf-success'];
+                    this.reset();
+                } else {
+                    status.className = 'form-status error';
+                    status.textContent = translations[currentLanguage]['cf-error'];
+                }
+            } catch (error) {
+                status.style.display = 'block';
+                status.className = 'form-status error';
+                status.textContent = translations[currentLanguage]['cf-error'];
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = translations[currentLanguage]['cf-submit'];
+            }
+        });
 
         updateLanguage();
     </script>
