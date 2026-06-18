@@ -1213,14 +1213,14 @@ Only</h3>
                 'pricing-title': 'Coaching Options',
                 'price1-title': 'Nutrition Plan\nOnly',
                 'price1-amount': '£45',
-                'price1-desc': 'Comprehensive analysis of your lifestyle and goals, plus your first fully customized plant-based meal plans.\n(£40/month continuous membership).',
+                'price1-desc': 'Comprehensive analysis of your lifestyle and goals, plus your first fully customized plant-based meal plans.\n(£40/month for ongoing support).',
                 'price-routine-title': 'Training Programming Only',
                 'price-routine-amount': '£35',
                 'price-routine-desc': 'Customized workout routines built for your goals and equipment. Progressive overload structured based on your objectives — tracked via Repstack (optional).\n(£30/month for ongoing support).',
                 'price-routine-note': '*Does not include in-gym sessions or form checks.',
                 'price2-title': 'Full Program (Nutrition + Training)',
                 'price2-amount': '£65',
-                'price2-desc': 'The complete package: Tailored nutrition plus a fully structured workout routine designed for your metrics.\n(£55/month continuous membership).',
+                'price2-desc': 'The complete package: Tailored nutrition plus a fully structured workout routine designed for your metrics.\n(£55/month for ongoing support).',
                 'price3-title': '3-Phase Periodisation Bundle (Full Program)',
                 'price3-amount': '£145',
                 'price3-desc': 'Pre-pay for the complete 12-week transformation block (Nutrition + Training). Includes initial setup and two monthly updates.\n(Standard total: £175, save £30)',
@@ -1308,10 +1308,11 @@ Only</h3>
             }
         };
 
-        let currentLanguage = 'en';
+        let currentLanguage = localStorage.getItem('language') || 'en';
 
         function toggleLanguage() {
             currentLanguage = currentLanguage === 'en' ? 'es' : 'en';
+            localStorage.setItem('language', currentLanguage);
             updateLanguage();
         }
 
@@ -1391,7 +1392,7 @@ Only</h3>
             }
         });
 
-        updateLanguage();
+        document.addEventListener('DOMContentLoaded', updateLanguage);
     </script>
 </body>
 </html>
