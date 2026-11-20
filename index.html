@@ -1,9 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant-Based Nutrition & Training</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <script>document.documentElement.className = 'js';</script>
+    <title>Plant-Based Nutrition &amp; Training</title>
+    <meta name="description" content="Personalised plant-based nutrition and strength training coaching for vegetarians and vegans, with Edwin Herrera: PhD physicist and certified sports nutritionist based in Durham, UK.">
+    <meta property="og:title" content="Plant-Based Nutrition &amp; Training">
+    <meta property="og:description" content="Personalised plant-based nutrition and strength training coaching for vegetarians and vegans.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://elecu.github.io/propergainz/">
+    <meta property="og:url" content="https://elecu.github.io/propergainz/">
+    <meta property="og:image" content="https://elecu.github.io/propergainz/pt-photo.jpg">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="930">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="logo.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": ["Person", "ProfessionalService"],
+        "name": "Edwin Herrera",
+        "jobTitle": "Plant-based nutrition and strength training coach",
+        "description": "Personalised plant-based nutrition and strength training coaching for vegetarians and vegans.",
+        "image": "https://elecu.github.io/propergainz/pt-photo.jpg",
+        "url": "https://elecu.github.io/propergainz/",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Durham",
+            "addressCountry": "GB"
+        },
+        "areaServed": "Worldwide",
+        "knowsAbout": ["Plant-based nutrition", "Strength training", "Sports nutrition"]
+    }
+    </script>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MHE21ZFJ51"></script>
     <script>
@@ -46,11 +78,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.03) 0%, transparent 50%);
             pointer-events: none;
             z-index: 1;
+        }
+
+        /* Accessibility */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--cyan);
+            outline-offset: 3px;
         }
 
         /* Navbar */
@@ -61,26 +100,70 @@
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1.5rem 2rem;
+            padding: 1.2rem 2rem;
             border-bottom: 1px solid rgba(0, 217, 255, 0.2);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1.5rem;
         }
 
         .logo {
-            font-size: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+            font-size: 1.2rem;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .logo-name {
+            color: var(--white);
             font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .logo-role {
             color: var(--cyan);
+            font-size: 0.55em;
+            font-weight: 600;
             letter-spacing: 3px;
+            text-transform: uppercase;
             text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyan);
         }
 
         .lang-toggle {
             background: transparent;
             border: 2px solid var(--cyan);
             color: var(--cyan);
-            padding: 0.6rem 1.2rem;
+            padding: 0.5rem 1.1rem;
             border-radius: 4px;
             cursor: pointer;
             font-size: 0.9rem;
@@ -98,7 +181,7 @@
 
         /* Hero Section */
         .hero {
-            margin-top: 60px;
+            padding-top: 6rem;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -216,11 +299,6 @@
             letter-spacing: 2px;
         }
 
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.4);
-        }
-
         /* Section Styling */
         section {
             padding: 8rem 2rem;
@@ -228,6 +306,7 @@
             margin: 0 auto;
             position: relative;
             z-index: 2;
+            scroll-margin-top: 5rem;
         }
 
         h2 {
@@ -250,14 +329,27 @@
             border-radius: 2px;
         }
 
+        /* Reveal animations (only hidden when JS is running) */
+        .about,
+        .service-card,
+        .price-card,
+        .app-card {
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .js .about:not(.visible),
+        .js .service-card:not(.visible),
+        .js .price-card:not(.visible),
+        .js .app-card:not(.visible) {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+
         /* About Section */
         .about {
             background: var(--gray-dark);
             border-radius: 0;
             padding: 4rem;
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
             border: 1px solid rgba(0, 217, 255, 0.1);
             position: relative;
             overflow: hidden;
@@ -271,11 +363,6 @@
             right: 0;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-        }
-
-        .about.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .about-content {
@@ -328,9 +415,6 @@
             padding: 2.5rem;
             border-radius: 0;
             border: 1px solid rgba(0, 217, 255, 0.2);
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            opacity: 0;
-            transform: translateY(60px);
             position: relative;
             overflow: hidden;
         }
@@ -350,14 +434,8 @@
             left: 100%;
         }
 
-        .service-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         .service-card:hover {
             border-color: var(--cyan);
-            transform: translateY(-10px);
             box-shadow: 0 20px 60px rgba(0, 217, 255, 0.2);
         }
 
@@ -390,6 +468,110 @@
             line-height: 1.8;
         }
 
+        /* Apps Section (compact) */
+        .apps {
+            padding: 4rem 2rem;
+        }
+
+        .apps h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .apps-intro-desc {
+            text-align: center;
+            color: var(--gray-light);
+            font-size: 1.05rem;
+            max-width: 640px;
+            margin: 1.5rem auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .app-card {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(0, 168, 204, 0.05) 100%);
+            border-radius: 0;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+        }
+
+        .app-card:hover {
+            border-color: var(--cyan);
+            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.15);
+        }
+
+        .app-logo {
+            display: block;
+            margin: 0 auto 1.25rem;
+            width: auto;
+            max-width: 100%;
+        }
+
+        .app-logo-ojasfuel {
+            height: 62px;
+        }
+
+        .app-logo-repstack {
+            height: 90px;
+        }
+
+        .app-card p {
+            color: var(--gray-light);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .app-card .app-powered {
+            font-size: 0.8rem;
+            color: rgba(240, 240, 240, 0.7);
+        }
+
+        .app-link {
+            display: inline-block;
+            margin-top: auto;
+            padding: 0.9rem 2rem;
+            background: transparent;
+            border: 2px solid var(--cyan);
+            color: var(--cyan);
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        .app-link:hover {
+            background: var(--cyan);
+            color: var(--black);
+            box-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+        }
+
         /* Pricing Section */
         .pricing-grid {
             display: grid;
@@ -410,21 +592,12 @@
             border-radius: 0;
             border: 2px solid rgba(0, 217, 255, 0.2);
             text-align: center;
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            opacity: 0;
-            transform: translateY(60px);
             position: relative;
             overflow: hidden;
         }
 
-        .price-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         .price-card:hover {
             border-color: var(--cyan);
-            transform: translateY(-15px) scale(1.02);
             box-shadow: 0 30px 80px rgba(0, 217, 255, 0.25);
             background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, var(--gray-dark) 100%);
         }
@@ -462,167 +635,17 @@
             opacity: 0.8;
         }
 
-        /* Repstack Section */
-        .repstack {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(0, 168, 204, 0.05) 100%);
-            border-radius: 0;
-            padding: 4rem 2rem;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
+        /* Hover lift only on devices that can hover, and only subtly */
+        @media (hover: hover) {
+            .cta-button:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 15px 40px rgba(0, 217, 255, 0.4);
+            }
 
-        .repstack::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-        }
-
-        .repstack.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .repstack:hover {
-            border-color: var(--cyan);
-            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.15);
-        }
-
-        .repstack h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-            font-weight: 700;
-        }
-
-        .repstack p {
-            color: var(--gray-light);
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .repstack-link {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: transparent;
-            border: 2px solid var(--cyan);
-            color: var(--cyan);
-            text-decoration: none;
-            border-radius: 0;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-        }
-
-        .repstack-link:hover {
-            background: var(--cyan);
-            color: var(--black);
-            box-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
-        }
-
-        /* Apps Section */
-        .apps-intro {
-            text-align: center;
-            padding: 4rem 2rem 1rem;
-        }
-
-        .apps-intro h2 {
-            font-size: 2rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-
-        .apps-intro p {
-            color: var(--gray-light);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        /* OjasFuel Section */
-        .ojasfuel {
-            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(0, 168, 204, 0.05) 100%);
-            border-radius: 0;
-            padding: 4rem 2rem;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ojasfuel::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-        }
-
-        .ojasfuel.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .ojasfuel:hover {
-            border-color: var(--cyan);
-            box-shadow: 0 20px 60px rgba(0, 217, 255, 0.15);
-        }
-
-        .ojasfuel p {
-            color: var(--gray-light);
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .ojasfuel-powered {
-            font-size: 0.8rem !important;
-            color: rgba(240,240,240,0.45) !important;
-            margin-bottom: 2rem !important;
-        }
-
-        .ojasfuel-link {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: transparent;
-            border: 2px solid var(--cyan);
-            color: var(--cyan);
-            text-decoration: none;
-            border-radius: 0;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-        }
-
-        .ojasfuel-link:hover {
-            background: var(--cyan);
-            color: var(--black);
-            box-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+            .service-card:hover,
+            .price-card:hover {
+                transform: translateY(-6px);
+            }
         }
 
         /* Payment Section */
@@ -689,53 +712,35 @@
             }
         }
 
-        .payment-btn-qr {
-            display: none;
+        /* New client block */
+        .new-client {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--black);
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        /* Forms Section */
-        .forms-section {
-            background: var(--gray-dark);
-            padding: 3rem;
-            border-radius: 0;
-            margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .forms-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-        }
-
-        .forms-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .forms-section h3 {
+        .new-client h3 {
             color: var(--white);
-            font-size: 1.2rem;
             margin-bottom: 0.5rem;
         }
 
-        .forms-section p {
+        .new-client p {
             color: var(--gray-light);
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
-            line-height: 1.5;
+        }
+
+        .new-client .form-note {
+            color: rgba(240, 240, 240, 0.7);
+            font-size: 0.8rem;
+            margin: 1rem 0 0;
+        }
+
+        .form-note a,
+        .footer-links a {
+            color: var(--cyan);
         }
 
         .form-btn {
@@ -765,205 +770,16 @@
             text-align: center;
         }
 
-        .contact-info {
-            background: var(--gray-dark);
-            padding: 4rem;
-            border-radius: 0;
-            margin-top: 3rem;
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-info::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-        }
-
-        .contact-info.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .contact-item {
-            margin: 2rem 0;
-        }
-
-        .contact-label {
-            color: var(--cyan);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 0.8rem;
-            font-weight: 700;
-        }
-
-        .contact-value {
+        .contact-subtitle {
+            color: var(--gray-light);
             font-size: 1.1rem;
-            color: var(--white);
-            font-weight: 600;
-            word-break: break-word;
+            margin: 1rem auto 2rem;
+            text-align: center;
+            max-width: 700px;
         }
 
-        .contact-value a {
-            color: var(--cyan);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            text-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
-        }
-
-        .contact-value a:hover {
-            text-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
-        }
-
-        /* Contact Modal */
-        .modal-overlay {
+        .no-js .js-email {
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal {
-            background: var(--gray-dark);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            border-radius: 0;
-            padding: 2rem;
-            max-width: 500px;
-            width: 100%;
-            position: relative;
-            box-shadow: 0 0 30px rgba(0, 217, 255, 0.1);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            color: var(--cyan);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 2rem;
-            height: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-close:hover {
-            text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
-        }
-
-        .modal-title {
-            color: var(--cyan);
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0 0 1.5rem 0;
-            text-align: center;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .contact-form label {
-            color: var(--cyan);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            background: var(--black);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            border-radius: 0;
-            color: var(--white);
-            padding: 0.75rem;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--cyan);
-            box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            background: var(--cyan);
-            color: var(--black);
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 0.5rem;
-        }
-
-        .submit-btn:hover:not(:disabled) {
-            box-shadow: 0 0 25px rgba(0, 217, 255, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .form-status {
-            padding: 1rem;
-            border-radius: 0;
-            text-align: center;
-            font-weight: 600;
-            margin-top: 0.5rem;
-        }
-
-        .form-status.success {
-            background: rgba(34, 197, 94, 0.1);
-            color: #22c55e;
-            border: 1px solid #22c55e;
-        }
-
-        .form-status.error {
-            background: rgba(239, 68, 68, 0.1);
-            color: #ef4444;
-            border: 1px solid #ef4444;
         }
 
         /* Footer */
@@ -977,8 +793,17 @@
             z-index: 2;
         }
 
+        .footer-links {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            .about {
+                padding: 2.5rem 1.5rem;
+            }
+
             .about-content {
                 flex-direction: column-reverse;
             }
@@ -1008,29 +833,88 @@
                 padding: 4rem 1.5rem;
             }
 
+            .apps {
+                padding: 3rem 1.5rem;
+            }
+
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
             nav {
                 padding: 1rem 1.5rem;
             }
 
+            .nav-links {
+                display: none;
+            }
+
             .logo {
-                font-size: 1.3rem;
+                font-size: 0.95rem;
+                letter-spacing: 1.5px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .logo {
+                font-size: 0.8rem;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+
+            .hero::before,
+            .hero::after {
+                animation: none;
+            }
+
+            .js .about:not(.visible),
+            .js .service-card:not(.visible),
+            .js .price-card:not(.visible),
+            .js .app-card:not(.visible) {
+                opacity: 1;
+                transform: none;
+            }
+
+            .cta-button:hover,
+            .service-card:hover,
+            .price-card:hover {
+                transform: none !important;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
-        <div class="logo"></div>
-        <button class="lang-toggle" onclick="toggleLanguage()">ES / EN</button>
+    <nav aria-label="Main">
+        <a class="logo" href="#top"><span class="logo-name">Edwin Herrera</span><span class="logo-role" id="logo-role">Plant-Based Coach</span></a>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#about" id="nav-about">About</a></li>
+                <li><a href="#services" id="nav-services">Services</a></li>
+                <li><a href="#pricing" id="nav-pricing">Pricing</a></li>
+                <li><a href="#contact" id="nav-contact">Contact</a></li>
+            </ul>
+            <button type="button" class="lang-toggle" id="lang-toggle" aria-label="Switch language to Spanish">ES</button>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="top">
         <div class="hero-content">
             <p class="hero-greeting" id="hero-greeting">Hi, I'm Edwin</p>
-            <h1 id="hero-title">Plant-Based Nutrition & Training</h1>
-            <p class="tagline" id="tagline">Vegetarian/Vegan strength nutrition. Personalized. Simple.</p>
+            <h1 id="hero-title">Plant-Based Nutrition &amp; Training</h1>
+            <p class="tagline" id="tagline">Vegetarian/Vegan strength nutrition &amp; training. Personalized. Simple.</p>
+            <a class="cta-button" href="#pricing" id="hero-cta">See Coaching Options</a>
         </div>
     </section>
 
@@ -1039,62 +923,60 @@
         <h2 id="about-title">About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p id="about-p1">
-                    I have a PhD in Physics and hold certifications as a Professional Weight Training Coach and Sports Nutritionist from WABBA International Bodybuilding and Fitness Limited. I combine scientific rigor with practical coaching for vegetarian/vegan athletes and fitness enthusiasts
-                </p>
-                <p id="about-p2">
-                    Having been a strict vegetarian for over 13 years, I deeply understand how to optimize physical performance and body composition on a plant based diet. I immersed myself in sports nutrition to master the balance between long-term health and athletic performance. While these principles guided my own transformation, I know every body is different; that is why I focus on designing tailored strategies to help other vegetarians and vegans achieve their specific fitness goals and build the body they want to attain</p>
+                <p id="about-p1">I have a PhD in Physics and hold certifications as a Professional Weight Training Coach and Sports Nutritionist from WABBA International Bodybuilding and Fitness Limited. I combine scientific rigor with practical coaching for vegetarian/vegan athletes and fitness enthusiasts.</p>
+                <p id="about-p2">Having been a strict vegetarian for over 13 years, I deeply understand how to optimize physical performance and body composition on a plant based diet. I immersed myself in sports nutrition to master the balance between long-term health and athletic performance. While these principles guided my own transformation, I know every body is different; that is why I focus on designing tailored strategies to help other vegetarians and vegans achieve their specific fitness goals and build the body they want to attain.</p>
             </div>
             <div class="about-photo">
-                <img src="pt-photo.jpg" alt="Edwin Herrera — Plant-Based Fitness Coach" />
+                <picture>
+                    <source srcset="pt-photo.webp" type="image/webp">
+                    <img src="pt-photo.jpg" width="600" height="930" loading="lazy" alt="Edwin Herrera — Plant-Based Fitness Coach">
+                </picture>
             </div>
         </div>
     </section>
 
- <!-- Services Section -->
+    <!-- Services Section -->
     <section id="services">
         <h2 id="services-title">What I Offer</h2>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+                <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
                 <h3 id="service1-title">Personalized Nutrition Plans</h3>
                 <p id="service1-desc">Customized meal plans built around your goals and preferences—completely tailored, no generic templates.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 19h16"/><rect x="6" y="11" width="3" height="8"/><rect x="11" y="7" width="3" height="12"/><rect x="16" y="3" width="3" height="16"/></svg></div>
+                <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16"/><rect x="6" y="11" width="3" height="8"/><rect x="11" y="7" width="3" height="12"/><rect x="16" y="3" width="3" height="16"/></svg></div>
                 <h3 id="service2-title">Scientific Training Programming</h3>
                 <p id="service2-desc">Customized workout routines tailored to your schedule and goals. Progressive overload structured based on your approach.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22V12"/><path d="M12 12C12 12 4 11 4 4C11 4 12 12 12 12Z"/><path d="M12 12C12 12 20 11 20 4C13 4 12 12 12 12Z"/></svg></div>
-                <h3 id="service3-title">Exclusively for Vegetarians & Vegans</h3>
+                <div class="service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22V12"/><path d="M12 12C12 12 4 11 4 4C11 4 12 12 12 12Z"/><path d="M12 12C12 12 20 11 20 4C13 4 12 12 12 12Z"/></svg></div>
+                <h3 id="service3-title">Exclusively for Vegetarians &amp; Vegans</h3>
                 <p id="service3-desc">Specialized coaching exclusively for plant-based fitness. Optimize your body composition, strength, and health without compromise.</p>
             </div>
         </div>
     </section>
 
-    <!-- Apps Intro -->
-    <div class="apps-intro">
-        <h2 id="apps-intro-title">I Also Build Fitness Tools</h2>
-        <p id="apps-intro-desc">Beyond nutrition coaching, I develop free apps to support your fitness journey — use them alongside your plan.</p>
-    </div>
-
-    <!-- OjasFuel Section -->
-    <section class="ojasfuel" id="ojasfuel">
-        <img id="ojasfuel-title" src="logo_text2.png" alt="OjasFuel" style="height: 62px; max-width: 251px; width: auto; margin-bottom: 1.5rem; display: block; margin-left: auto; margin-right: auto;">
-        <p id="ojasfuel-desc">Scan a barcode or search any food — instantly know if it's vegan, vegetarian, or neither. No label squinting required. Calculate exactly how much you need to hit your protein or calorie goal, find equivalent foods. Oh yes, fuel!</p>
-        <p class="ojasfuel-powered">Powered by OpenFoodFacts</p>
-        <a href="https://ojasfuel.streamlit.app/" target="_blank" class="ojasfuel-link" id="ojasfuel-cta">Try OjasFuel →</a>
+    <!-- Apps Section -->
+    <section class="apps" id="apps">
+        <h2 id="apps-intro-title">Tools My Clients Use</h2>
+        <p class="apps-intro-desc" id="apps-intro-desc">Both apps are free for everyone. If we work together, they are integrated into your coaching plan.</p>
+        <div class="apps-grid">
+            <article class="app-card" id="ojasfuel">
+                <img id="ojasfuel-title" class="app-logo app-logo-ojasfuel" src="logo_text2.png" width="600" height="200" loading="lazy" alt="OjasFuel">
+                <p id="ojasfuel-desc">Scan a barcode or search any food — instantly know if it's vegan, vegetarian, or neither. No label squinting required. Calculate exactly how much you need to hit your protein or calorie goal, find equivalent foods. Oh yes, fuel!</p>
+                <p class="app-powered">Powered by OpenFoodFacts</p>
+                <a href="https://ojasfuel.streamlit.app/" target="_blank" rel="noopener noreferrer" class="app-link" id="ojasfuel-cta">Try OjasFuel →</a>
+            </article>
+            <article class="app-card" id="repstack">
+                <img id="repstack-title" class="app-logo app-logo-repstack" src="repstack.png" width="639" height="310" loading="lazy" alt="RepStack">
+                <p id="repstack-desc">Built for bodybuilders — log workouts by muscle group, exercise type, and intensity zone. Track your progress, spot patterns, and ditch the static notebook. No install needed, runs right in your browser.</p>
+                <a href="https://rep-stack.pages.dev/" target="_blank" rel="noopener noreferrer" class="app-link" id="repstack-cta">Visit Repstack →</a>
+            </article>
+        </div>
     </section>
 
-    <!-- Repstack Section -->
-    <section class="repstack" id="repstack">
-        <img id="repstack-title" src="repstack.png" alt="RepStack" style="height: 90px; max-width: 340px; width: auto; margin-bottom: 1.5rem; display: block; margin-left: auto; margin-right: auto;">
-        <p id="repstack-desc">Built for bodybuilders — log workouts by muscle group, exercise type, and intensity zone. Track your progress, spot patterns, and ditch the static notebook. No install needed, runs right in your browser.</p>
-        <a href="https://rep-stack.pages.dev/" target="_blank" class="repstack-link">Visit Repstack →</a>
-    </section>
-
-<!-- Pricing Section -->
+    <!-- Pricing Section -->
     <section id="pricing">
         <h2 id="pricing-title">Coaching Options</h2>
         <div class="pricing-grid">
@@ -1108,7 +990,7 @@ Only</h3>
             <div class="price-card">
                 <h3 id="price-routine-title">Training Programming Only</h3>
                 <div class="price" id="price-routine-amount">£35</div>
-                <div class="price-description" id="price-routine-desc">Customized workout routines built for your goals and equipment. Progressive overload structured based on your objectives — tracked via Repstack.
+                <div class="price-description" id="price-routine-desc">Customized workout routines built for your goals and equipment. Progressive overload structured based on your objectives — tracked via Repstack (optional).
 (£30/month for ongoing support).</div>
                 <div class="price-note" id="price-routine-note">*Does not include in-gym sessions or form checks.</div>
             </div>
@@ -1128,81 +1010,82 @@ Only</h3>
     </section>
 
     <!-- Payment Section -->
-    <section class="payment-section">
+    <section class="payment-section" id="payment">
         <h2 id="payment-heading">Ready to Start?</h2>
         <p class="payment-note" id="payment-note">Want to book a session or have questions? Email me or pay directly here.</p>
         <div class="payment-buttons">
-            <a href="https://paypal.me/el3cu" target="_blank" class="payment-btn">
-                <img src="paypal.png" alt="PayPal" class="payment-logo" />
+            <a href="https://paypal.me/el3cu" target="_blank" rel="noopener noreferrer" class="payment-btn">
+                <img src="paypal.png" width="450" height="114" loading="lazy" alt="PayPal" class="payment-logo">
             </a>
-            <a href="https://buymeacoffee.com/cowboyedwin" target="_blank" class="payment-btn">
-                <img src="BuyMeACoffee.png" alt="Buy Me a Coffee" class="payment-logo" />
+            <a href="https://buymeacoffee.com/cowboyedwin" target="_blank" rel="noopener noreferrer" class="payment-btn">
+                <img src="BuyMeACoffee.png" width="340" height="66" loading="lazy" alt="Buy Me a Coffee" class="payment-logo">
             </a>
-        </div>
-        <div class="payment-btn-qr" id="bmac-qr-container">
-            <img src="bmac-qr.png" alt="Buy Me a Coffee QR" />
         </div>
     </section>
 
     <!-- New Client Info Section -->
-    <div style="text-align: center; padding: 3rem 2rem; background: var(--black); max-width: 700px; margin: 0 auto;">
-        <h3 id="forms-heading" style="color: var(--white); margin-bottom: 0.5rem;">New Client? Start Here</h3>
-        <p id="forms-subtext" style="color: var(--gray-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Fill out this quick form so I have all the info I need before our first session.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsRVgwCA-4_NEcKDJ22uuVhhF9xS9WVLoZwZFsKsXu6JYi2A/viewform?usp=header" target="_blank" class="form-btn" id="form-btn-link">Start Here</a>
+    <div class="new-client" id="new-client">
+        <h3 id="forms-heading">New Client? Start Here</h3>
+        <p id="forms-subtext">Fill out this quick form so I have all the info I need before our first session.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsRVgwCA-4_NEcKDJ22uuVhhF9xS9WVLoZwZFsKsXu6JYi2A/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="form-btn" id="form-btn-link">Start Here</a>
+        <p class="form-note"><span id="forms-note-pre">Your answers include health information. See how I handle it in the </span><a href="privacy.html" id="forms-note-link">Privacy Policy</a><span id="forms-note-post">.</span></p>
     </div>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section class="contact" id="contact">
         <h2 id="contact-title">Get In Touch</h2>
-        <p id="contact-subtitle" style="color: var(--gray-light); font-size: 1.1rem; margin: 1rem auto 2rem; text-align: center; max-width: 700px;">Got questions or want to kick off your nutrition plan? I'm here. Send me a message and let's talk.</p>
-        <div style="text-align: center;">
-            <a href="mailto:edwinh.coaching@gmail.com" class="form-btn" style="display: inline-block;">Send Message</a>
+        <p class="contact-subtitle" id="contact-subtitle">Got questions or want to kick off your nutrition plan? I'm here. Send me a message and let's talk.</p>
+        <div>
+            <a class="form-btn js-email" id="contact-btn" data-u="edwinh.coaching" data-d="gmail.com" href="#">Send Message</a>
+            <noscript>edwinh.coaching [at] gmail [dot] com</noscript>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="footer">
-        Plant-Based Nutrition & Training © 2026. All rights reserved.
+    <footer>
+        <p id="footer">Plant-Based Nutrition &amp; Training © 2026. All rights reserved.</p>
+        <p class="footer-links"><a href="privacy.html" id="footer-privacy">Privacy Policy</a></p>
     </footer>
 
     <script>
-        // Scroll animation observer
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        // Scroll reveal
+        (function () {
+            const targets = document.querySelectorAll('.service-card, .price-card, .about, .app-card');
+            if (!('IntersectionObserver' in window)) {
+                targets.forEach(el => el.classList.add('visible'));
+                return;
+            }
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        scrollObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -100px 0px' });
+            targets.forEach(el => scrollObserver.observe(el));
+        })();
 
-        const scrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.service-card, .price-card, .about, .contact-info, .repstack, .ojasfuel').forEach(el => {
-                scrollObserver.observe(el);
-            });
-        });
-
-        // Parallax effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.hero::before, .hero::after');
-            
-            document.querySelector('.hero')?.style.setProperty('--scroll', scrolled / 2 + 'px');
+        // Email obfuscation
+        document.querySelectorAll('.js-email').forEach(a => {
+            a.href = 'mailto:' + a.dataset.u + '@' + a.dataset.d;
         });
 
         const translations = {
             en: {
+                'logo-role': 'Plant-Based Coach',
+                'nav-about': 'About',
+                'nav-services': 'Services',
+                'nav-pricing': 'Pricing',
+                'nav-contact': 'Contact',
+                'lang-toggle': 'ES',
                 'hero-greeting': "Hi, I'm Edwin",
                 'hero-title': 'Plant-Based Nutrition & Training',
                 'tagline': 'Vegetarian/Vegan strength nutrition & training. Personalized. Simple.',
+                'hero-cta': 'See Coaching Options',
                 'about-title': 'About Me',
                 'about-p1': "I have a PhD in Physics and hold certifications as a Professional Weight Training Coach and Sports Nutritionist from WABBA International Bodybuilding and Fitness Limited. I combine scientific rigor with practical coaching for vegetarian/vegan athletes and fitness enthusiasts.",
                 'about-p2': "Having been a strict vegetarian for over 13 years, I deeply understand how to optimize physical performance and body composition on a plant based diet. I immersed myself in sports nutrition to master the balance between long-term health and athletic performance. While these principles guided my own transformation, I know every body is different; that is why I focus on designing tailored strategies to help other vegetarians and vegans achieve their specific fitness goals and build the body they want to attain.",
-                'about-p3': "Certified by: WABBA International Bodybuilding and Fitness Limited",
                 'services-title': 'What I Offer',
                 'service1-title': 'Personalized Nutrition Plans',
                 'service1-desc': 'Customized meal plans built around your goals and preferences—completely tailored, no generic templates.',
@@ -1224,9 +1107,10 @@ Only</h3>
                 'price3-title': '3-Phase Periodisation Bundle (Full Program)',
                 'price3-amount': '£145',
                 'price3-desc': 'Pre-pay for the complete 12-week transformation block (Nutrition + Training). Includes initial setup and two monthly updates.\n(Standard total: £175, save £30)',
-                'apps-intro-title': 'I Also Build Fitness Tools',
-                'apps-intro-desc': 'Beyond nutrition coaching, I develop free apps to support your fitness journey — use them alongside your plan.',
+                'apps-intro-title': 'Tools My Clients Use',
+                'apps-intro-desc': 'Both apps are free for everyone. If we work together, they are integrated into your coaching plan.',
                 'repstack-desc': 'Built for bodybuilders — log workouts by muscle group, exercise type, and intensity zone. Track your progress, spot patterns, and ditch the static notebook. No install needed, runs right in your browser.',
+                'repstack-cta': 'Visit Repstack →',
                 'ojasfuel-desc': 'Scan a barcode or search any food — instantly know if it\'s vegan, vegetarian, or neither. No label squinting required. Calculate exactly how much you need to hit your protein or calorie goal, find equivalent foods. Oh yes, fuel!',
                 'ojasfuel-cta': 'Try OjasFuel →',
                 'payment-heading': 'Ready to Start?',
@@ -1234,27 +1118,26 @@ Only</h3>
                 'forms-heading': 'New Client? Start Here',
                 'forms-subtext': 'Fill out this quick form so I have all the info I need before our first session.',
                 'form-btn-link': 'Start Here',
+                'forms-note-pre': 'Your answers include health information. See how I handle it in the ',
+                'forms-note-link': 'Privacy Policy',
+                'forms-note-post': '.',
                 'contact-title': 'Get In Touch',
                 'contact-subtitle': "Got questions or want to kick off your nutrition plan? I'm here. Send me a message and let's talk.",
-                'email-label': 'Email',
-                'linkedin-label': 'LinkedIn',
-                'based-label': 'Based In',
-                'based-city': 'Durham, United Kingdom',
-                'open-contact-modal': 'Send Message',
-                'modal-title-text': 'Send a Message',
-                'cf-name-label': 'Name',
-                'cf-email-label': 'Your Email',
-                'cf-message-label': 'Message',
-                'cf-submit': 'Send',
-                'cf-sending': 'Sending…',
-                'cf-success': 'Message sent! I\'ll get back to you soon.',
-                'cf-error': 'Something went wrong. Please try again or email me directly.',
-                'footer': 'Plant-Based Nutrition & Training © 2026. All rights reserved.'
+                'contact-btn': 'Send Message',
+                'footer': 'Plant-Based Nutrition & Training © 2026. All rights reserved.',
+                'footer-privacy': 'Privacy Policy'
             },
             es: {
+                'logo-role': 'Coach Plant-Based',
+                'nav-about': 'Sobre Mí',
+                'nav-services': 'Servicios',
+                'nav-pricing': 'Precios',
+                'nav-contact': 'Contacto',
+                'lang-toggle': 'EN',
                 'hero-greeting': 'Hola, soy Edwin',
                 'hero-title': 'Nutrición y Entrenamiento Basado en Plantas',
                 'tagline': 'Nutrición y entrenamiento de fuerza vegetariano/vegano. Personalizado. Simple.',
+                'hero-cta': 'Ver Opciones de Coaching',
                 'about-title': 'Sobre Mí',
                 'about-p1': 'Soy Doctor en Física (PhD) y cuento con certificaciones como Entrenador Profesional de Pesas y Nutriólogo Deportivo por WABBA International Bodybuilding and Fitness Limited. Combino rigor científico con coaching práctico para atletas vegetarianos/veganos.',
                 'about-p2': 'Como vegetariano estricto desde hace más de 13 años, entiendo profundamente cómo optimizar el rendimiento físico y la composición corporal con una alimentación basada en plantas. Me sumergí en la nutrición deportiva para dominar el equilibrio entre la salud a largo plazo y el rendimiento atlético. Aunque estos principios guiaron mi propia transformación, sé que cada cuerpo es diferente; por eso, me enfoco en diseñar estrategias a medida que ayuden a otros vegetarianos y veganos a alcanzar sus objetivos de fitness específicos y construir el cuerpo que desean lograr.',
@@ -1264,7 +1147,7 @@ Only</h3>
                 'service2-title': 'Programación de Entrenamiento Científico',
                 'service2-desc': 'Rutinas personalizadas según tu disponibilidad y metas. Sobrecarga progresiva estructurada según tu enfoque.',
                 'service3-title': 'Exclusivo para Vegetarianos y Veganos',
-                'service3-desc': 'Coaching especializado únicamente para atletas plant-based — fuerza, rendimiento y composición corporal sin productos animales.',
+                'service3-desc': 'Coaching especializado exclusivamente para fitness basado en plantas. Optimiza tu composición corporal, fuerza y salud sin concesiones.',
                 'pricing-title': 'Opciones de Coaching',
                 'price1-title': 'Solo Plan de Nutrición',
                 'price1-amount': '$990 MXN',
@@ -1279,9 +1162,10 @@ Only</h3>
                 'price3-title': 'Paquete de Periodización en 3 Fases (Programa Completo)',
                 'price3-amount': '$3,290 MXN',
                 'price3-desc': 'Prepaga el bloque completo de transformación de 12 semanas (Nutrición + Entrenamiento), incluyendo la configuración inicial y dos actualizaciones mensuales.\n(Total estándar: $3,990 MXN, ahorra $700 MXN)',
-                'apps-intro-title': 'También Desarrollo Herramientas Fitness',
-                'apps-intro-desc': 'Además del coaching nutricional, desarrollo apps gratuitas para apoyar tu entrenamiento — úsalas junto con tu plan.',
+                'apps-intro-title': 'Herramientas que Usan mis Clientes',
+                'apps-intro-desc': 'Ambas apps son gratuitas para todos. Si trabajamos juntos, se integran en tu plan de coaching.',
                 'repstack-desc': 'Diseñada para bodybuilders — registra entrenamientos por grupo muscular, tipo de ejercicio y zona de intensidad. Sigue tu progreso, detecta patrones y olvídate de la libreta. Corre directo en tu navegador, sin instalación.',
+                'repstack-cta': 'Visitar Repstack →',
                 'ojasfuel-desc': 'Busca un alimento por nombre o escanea su código de barras — al instante sabrás si es vegano, vegetariano o ninguno de los dos. Sin leer etiquetas diminutas. Calcula cuánto necesitas para llegar a tu meta de proteína o calorías, encuentra alimentos equivalentes e identifica productos con una foto.',
                 'ojasfuel-cta': 'Probar OjasFuel →',
                 'payment-heading': '¿Listo para Comenzar?',
@@ -1289,40 +1173,49 @@ Only</h3>
                 'forms-heading': '¿Nuevo Cliente? Empieza Aquí',
                 'forms-subtext': 'Llena este breve formulario para que tenga toda la información antes de nuestra primera sesión.',
                 'form-btn-link': 'Empieza Aquí',
+                'forms-note-pre': 'Tus respuestas incluyen información de salud. Consulta cómo la trato en el ',
+                'forms-note-link': 'Aviso de Privacidad',
+                'forms-note-post': '.',
                 'contact-title': 'Ponte en Contacto',
                 'contact-subtitle': '¿Tienes dudas o quieres arrancar con tu plan de nutrición? Estoy aquí. Mándame un mensaje y platicamos.',
-                'email-label': 'Email',
-                'linkedin-label': 'LinkedIn',
-                'based-label': 'Basado en',
-                'based-city': 'Durham, Reino Unido',
-                'open-contact-modal': 'Enviar Mensaje',
-                'modal-title-text': 'Enviar un Mensaje',
-                'cf-name-label': 'Nombre',
-                'cf-email-label': 'Tu Email',
-                'cf-message-label': 'Mensaje',
-                'cf-submit': 'Enviar',
-                'cf-sending': 'Enviando…',
-                'cf-success': 'Mensaje enviado. Te respondo pronto.',
-                'cf-error': 'Algo salió mal. Inténtalo de nuevo o escríbeme directamente.',
-                'footer': 'Nutrición y Entrenamiento Basado en Plantas © 2026. Todos los derechos reservados.'
+                'contact-btn': 'Enviar Mensaje',
+                'footer': 'Nutrición y Entrenamiento Basado en Plantas © 2026. Todos los derechos reservados.',
+                'footer-privacy': 'Política de Privacidad'
             }
         };
 
-        let currentLanguage = localStorage.getItem('language') || 'en';
+        const langToggleLabels = {
+            en: 'Switch language to Spanish',
+            es: 'Cambiar el idioma a inglés'
+        };
+
+        let currentLanguage = 'en';
+        try {
+            const saved = localStorage.getItem('language');
+            if (saved && translations[saved]) currentLanguage = saved;
+        } catch (e) {}
 
         function toggleLanguage() {
             currentLanguage = currentLanguage === 'en' ? 'es' : 'en';
-            localStorage.setItem('language', currentLanguage);
+            try { localStorage.setItem('language', currentLanguage); } catch (e) {}
             updateLanguage();
         }
 
         function updateLanguage() {
+            document.documentElement.lang = currentLanguage;
+
             Object.keys(translations[currentLanguage]).forEach(key => {
                 const element = document.getElementById(key);
                 if (element) {
                     element.textContent = translations[currentLanguage][key];
                 }
             });
+
+            const toggle = document.getElementById('lang-toggle');
+            if (toggle) {
+                toggle.setAttribute('aria-label', langToggleLabels[currentLanguage]);
+                toggle.setAttribute('lang', currentLanguage === 'en' ? 'es' : 'en');
+            }
 
             // Update form button href based on language
             const formBtn = document.getElementById('form-btn-link');
@@ -1335,64 +1228,8 @@ Only</h3>
             }
         }
 
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function openContactModal() {
-            document.getElementById('contact-modal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeContactModal() {
-            document.getElementById('contact-modal').classList.remove('active');
-            document.body.style.overflow = '';
-            document.getElementById('form-status').style.display = 'none';
-            document.getElementById('contact-form').reset();
-        }
-
-        function closeModalOnOverlay(e) {
-            if (e.target.id === 'contact-modal') closeContactModal();
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && document.getElementById('contact-modal').classList.contains('active')) {
-                closeContactModal();
-            }
-        });
-
-        document.getElementById('contact-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const submitBtn = document.getElementById('cf-submit');
-            const status = document.getElementById('form-status');
-            submitBtn.disabled = true;
-            submitBtn.textContent = translations[currentLanguage]['cf-sending'] || 'Sending…';
-            try {
-                const res = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    body: new FormData(this)
-                });
-                const data = await res.json();
-                status.style.display = 'block';
-                if (data.success) {
-                    status.className = 'form-status success';
-                    status.textContent = translations[currentLanguage]['cf-success'];
-                    this.reset();
-                } else {
-                    status.className = 'form-status error';
-                    status.textContent = translations[currentLanguage]['cf-error'];
-                }
-            } catch (error) {
-                status.style.display = 'block';
-                status.className = 'form-status error';
-                status.textContent = translations[currentLanguage]['cf-error'];
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = translations[currentLanguage]['cf-submit'];
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', updateLanguage);
+        document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
+        updateLanguage();
     </script>
 </body>
 </html>

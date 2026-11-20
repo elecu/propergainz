@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="Privacy Policy / Aviso de Privacidad Integral — Plant-Based Nutrition & Training">
+    <title>Privacy Policy / Aviso de Privacidad</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MHE21ZFJ51"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MHE21ZFJ51');
+    </script>
+    <noscript><style>article[hidden]{display:block}.js-only{display:none}</style></noscript>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --cyan: #00d9ff;
+            --cyan-dark: #00a8cc;
+            --gray-dark: #1a1a1a;
+            --gray-light: #f0f0f0;
+            --text: #e6e6e6;
+            --muted: #a8a8a8;
+        }
+        html { scroll-padding-top: 90px; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--black);
+            color: var(--text);
+            line-height: 1.75;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed; inset: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(0,217,255,0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0,217,255,0.03) 0%, transparent 50%);
+            pointer-events: none; z-index: 0;
+        }
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(0,217,255,0.2);
+            display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+        }
+        .back {
+            color: var(--cyan); text-decoration: none; font-weight: 600;
+            letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;
+        }
+        .back:hover { text-decoration: underline; }
+        .lang-toggle {
+            background: transparent; border: 2px solid var(--cyan); color: var(--cyan);
+            padding: 0.6rem 1.2rem; border-radius: 0; cursor: pointer;
+            font: inherit; font-size: 0.9rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .lang-toggle:hover { background: var(--cyan); color: var(--black); box-shadow: 0 0 20px rgba(0,217,255,0.5); }
+        :focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+        main {
+            position: relative; z-index: 2;
+            max-width: 760px; margin: 0 auto;
+            padding: 7rem 16px 4rem;
+        }
+        h1 { font-size: 2.2rem; line-height: 1.2; color: var(--white); margin-bottom: 0.5rem; }
+        h1 span { color: var(--cyan); }
+        h2 {
+            font-size: 1.4rem; line-height: 1.3; color: var(--cyan);
+            margin: 2.75rem 0 0.9rem; padding-top: 1.25rem;
+            border-top: 1px solid rgba(0,217,255,0.2);
+        }
+        h3 { font-size: 1.05rem; color: var(--white); margin: 1.5rem 0 0.5rem; }
+        p, ul, ol, table { margin-bottom: 1rem; }
+        ul, ol { padding-left: 1.4rem; }
+        li { margin-bottom: 0.4rem; }
+        a { color: var(--cyan); }
+        a:hover { color: var(--white); }
+        .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .toc {
+            background: var(--gray-dark); border: 1px solid rgba(0,217,255,0.2);
+            padding: 1rem 1.25rem; margin: 1.5rem 0 2rem;
+        }
+        .toc strong { color: var(--white); display: block; margin-bottom: 0.4rem; }
+        .toc ol { margin: 0; columns: 2; column-gap: 2rem; font-size: 0.95rem; }
+        .toc li { margin-bottom: 0.15rem; break-inside: avoid; }
+        .note {
+            border-left: 3px solid var(--cyan); background: var(--gray-dark);
+            padding: 0.9rem 1.1rem; margin: 1rem 0;
+        }
+        .table-wrap { overflow-x: auto; margin-bottom: 1rem; }
+        table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 0.95rem; margin-bottom: 0; }
+        th, td { border: 1px solid rgba(0,217,255,0.2); padding: 0.55rem 0.75rem; text-align: left; vertical-align: top; }
+        th { background: var(--gray-dark); color: var(--white); }
+        .lang-switch-link { display: inline-block; margin: 0.5rem 0 1rem; }
+        footer {
+            position: relative; z-index: 2;
+            background: var(--gray-dark); text-align: center;
+            padding: 2.5rem 16px; color: var(--gray-light);
+            border-top: 1px solid rgba(0,217,255,0.1);
+        }
+        footer a { margin: 0 0.5rem; }
+        article, p, li, td, th, h1, h2 { overflow-wrap: anywhere; }
+        @media (max-width: 768px) {
+            nav { padding: 0.8rem 16px; }
+            h1 { font-size: 1.7rem; }
+            h2 { font-size: 1.25rem; }
+            .toc ol { columns: 1; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a class="back" id="back-link" href="index.html">&larr; Back</a>
+        <button class="lang-toggle js-only" id="lang-btn" type="button">ES</button>
+    </nav>
+
+    <main>
+    <!-- ===================== ENGLISH ===================== -->
+    <article lang="en" id="privacy-en">
+        <h1>Privacy <span>Policy</span></h1>
+        <p class="meta">Last updated: 20 November 2026</p>
+        <p class="lang-switch-link"><a href="#aviso-es" hreflang="es" lang="es">Leer en español: Aviso de Privacidad Integral (México)</a></p>
+
+        <div class="toc" role="navigation" aria-label="Contents">
+            <strong>Contents</strong>
+            <ol>
+                <li><a href="#en-1">Who I am</a></li>
+                <li><a href="#en-2">What data I collect</a></li>
+                <li><a href="#en-3">Why I use it and my lawful basis</a></li>
+                <li><a href="#en-4">Who receives your data</a></li>
+                <li><a href="#en-5">International transfers</a></li>
+                <li><a href="#en-6">How long I keep it</a></li>
+                <li><a href="#en-7">Your rights</a></li>
+                <li><a href="#en-8">Complaints</a></li>
+                <li><a href="#en-9">Cookies and analytics</a></li>
+                <li><a href="#en-10">Health disclaimer</a></li>
+                <li><a href="#en-11">Changes to this policy</a></li>
+            </ol>
+        </div>
+
+        <p>This policy explains how personal data is handled when you visit this website or use my online plant-based nutrition and training coaching service. It is written for people in the United Kingdom and elsewhere; the UK GDPR and the Data Protection Act 2018 apply. If you are in Mexico, see the separate Aviso de Privacidad Integral on this page.</p>
+
+        <h2 id="en-1">1. Who I am</h2>
+        <p>I am Edwin Herrera, a sole trader based in Durham, United Kingdom. I am the controller of your personal data. I provide online coaching (nutrition plans and training programming) mainly to vegetarians and vegans, with clients worldwide.</p>
+        <p>Contact for anything about your data: <a class="js-email" data-u="edwinh.coaching" data-d="gmail.com" href="#"></a><noscript>edwinh.coaching [at] gmail [dot] com</noscript></p>
+
+        <h2 id="en-2">2. What data I collect</h2>
+        <ul>
+            <li><strong>Intake form (Google Form):</strong> name, email, age, body measurements, goals, diet, and training history.</li>
+            <li><strong>Health data (special category):</strong> injuries, medical conditions, medication and allergies. You choose what to share, but I cannot safely tailor a plan without relevant information.</li>
+            <li><strong>Emails and messages</strong> you send me, via Gmail.</li>
+            <li><strong>Payment details:</strong> payments are made through PayPal or Buy Me a Coffee. I only see your name, email address and the amount paid. I never see your card or bank details.</li>
+            <li><strong>Website usage data:</strong> collected by Google Analytics 4 (pages visited, approximate location, device and browser type). See section 9.</li>
+            <li><strong>Technical data</strong> such as your IP address, which is processed by the website host (GitHub Pages) when you load the site.</li>
+        </ul>
+
+        <h2 id="en-3">3. Why I use it and my lawful basis</h2>
+        <div class="table-wrap"><table>
+            <thead><tr><th>Purpose</th><th>Data</th><th>Lawful basis</th></tr></thead>
+            <tbody>
+                <tr><td>Answer your enquiry and take pre-contract steps</td><td>Name, email, message</td><td>Contract, Art. 6(1)(b) (steps at your request before a contract)</td></tr>
+                <tr><td>Deliver coaching: build nutrition and training plans, communicate, adjust plans</td><td>Intake and progress data</td><td>Contract, Art. 6(1)(b)</td></tr>
+                <tr><td>Use your health information to make plans safe and suitable</td><td>Health data</td><td>Your explicit consent, Art. 9(2)(a). You can withdraw it at any time.</td></tr>
+                <tr><td>Take payment and keep accounting records</td><td>Name, email, amount, date</td><td>Contract, Art. 6(1)(b); legal obligation, Art. 6(1)(c)</td></tr>
+                <tr><td>Understand how the website is used and improve it</td><td>Analytics data</td><td>Legitimate interests, Art. 6(1)(f)</td></tr>
+            </tbody>
+        </table></div>
+        <p>If you withdraw consent to use your health data, I may no longer be able to provide a personalised plan. Withdrawing does not affect processing done before withdrawal.</p>
+        <p>I do not make decisions about you using solely automated processing, and I do not sell your data.</p>
+
+        <h2 id="en-4">4. Who receives your data</h2>
+        <p>I share data only with service providers needed to run the service:</p>
+        <ul>
+            <li><strong>Google</strong> (Google Forms, Gmail and Google Analytics), which processes data on my behalf.</li>
+            <li><strong>PayPal</strong> and <strong>Buy Me a Coffee</strong>, which process payments. They act as independent controllers for your payment details and have their own privacy policies.</li>
+            <li><strong>GitHub</strong> (GitHub Pages), which hosts this website.</li>
+        </ul>
+        <p>I may also disclose data where required by law, for example to HMRC or a court.</p>
+
+        <h2 id="en-5">5. International transfers</h2>
+        <p>I am in the UK, but the providers above are mainly based in the United States, so your data may be transferred and stored outside the UK. Where this happens I rely on the safeguards available, which depend on the provider: the UK Extension to the EU-US Data Privacy Framework (the "UK-US data bridge") for certified US companies, the International Data Transfer Agreement or UK Addendum to standard contractual clauses, or another safeguard permitted by UK law. You can ask me for more detail using the contact above.</p>
+
+        <h2 id="en-6">6. How long I keep it</h2>
+        <ul>
+            <li><strong>Health and plan data:</strong> for the duration of our coaching, plus 12 months, then deleted.</li>
+            <li><strong>Financial records:</strong> 6 years, to meet HMRC requirements.</li>
+            <li><strong>Enquiries that do not become clients:</strong> 12 months, then deleted.</li>
+            <li><strong>Analytics data:</strong> held according to Google Analytics retention settings.</li>
+        </ul>
+
+        <h2 id="en-7">7. Your rights</h2>
+        <p>Under UK data protection law you have the right to:</p>
+        <ul>
+            <li>be informed about how your data is used (this policy);</li>
+            <li>access a copy of your data;</li>
+            <li>have inaccurate data corrected;</li>
+            <li>have your data erased, in certain circumstances;</li>
+            <li>restrict how I use your data, in certain circumstances;</li>
+            <li>object to processing based on legitimate interests;</li>
+            <li>receive your data in a portable format, where processing is based on contract or consent;</li>
+            <li>withdraw consent at any time, where processing is based on consent;</li>
+            <li>not be subject to decisions based solely on automated processing (I do not make such decisions).</li>
+        </ul>
+        <p>To use any of these rights, email me at <a class="js-email" data-u="edwinh.coaching" data-d="gmail.com" href="#"></a><noscript>edwinh.coaching [at] gmail [dot] com</noscript>. I will normally respond within one month and may ask you to confirm your identity. There is no charge in most cases.</p>
+
+        <h2 id="en-8">8. Complaints</h2>
+        <p>I would like the chance to resolve any concern first, but you have the right to complain to the UK supervisory authority, the Information Commissioner's Office (ICO): <a href="https://ico.org.uk" rel="noopener noreferrer">ico.org.uk</a>, telephone 0303 123 1113.</p>
+
+        <h2 id="en-9">9. Cookies and analytics</h2>
+        <p>This website uses Google Analytics 4 (measurement ID G-MHE21ZFJ51) to count visits and understand which pages are useful. It sets the cookies <code>_ga</code> and <code>_ga_&lt;ID&gt;</code>, which can last up to 2 years. The site does not currently show a cookie consent banner, so analytics run when you load the page. My basis is legitimate interests, and I use the data only in aggregate.</p>
+        <p>You can opt out by:</p>
+        <ul>
+            <li>blocking or deleting cookies in your browser settings, or using a browser that blocks trackers;</li>
+            <li>installing the <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>;</li>
+            <li>objecting to me directly at the contact address above.</li>
+        </ul>
+        <p>The site stores your language choice in your browser's local storage. This stays on your device and is not sent to me.</p>
+
+        <h2 id="en-10">10. Health disclaimer</h2>
+        <div class="note"><p>My coaching is not medical advice and does not replace a doctor, dietitian or other healthcare professional. If you have a medical condition, injury, are pregnant, or take medication, consult a qualified professional before changing your diet or starting a training programme.</p></div>
+
+        <h2 id="en-11">11. Changes to this policy</h2>
+        <p>I may update this policy from time to time. The date at the top shows when it was last changed. If a change significantly affects how I use your data, I will tell you directly where I can.</p>
+    </article>
+
+    <!-- ===================== ESPAÑOL ===================== -->
+    <article lang="es" id="aviso-es" hidden>
+        <h1>Aviso de Privacidad <span>Integral</span></h1>
+        <p class="meta">Última actualización: 20 de noviembre de 2026</p>
+
+        <div class="toc" role="navigation" aria-label="Contenido">
+            <strong>Contenido</strong>
+            <ol>
+                <li><a href="#es-1">Identidad y domicilio del responsable</a></li>
+                <li><a href="#es-2">Datos personales que se tratan</a></li>
+                <li><a href="#es-3">Finalidades del tratamiento</a></li>
+                <li><a href="#es-4">Consentimiento</a></li>
+                <li><a href="#es-5">Transferencias y remisiones</a></li>
+                <li><a href="#es-6">Derechos ARCO y revocación</a></li>
+                <li><a href="#es-7">Limitar el uso o divulgación</a></li>
+                <li><a href="#es-8">Cookies y tecnologías de rastreo</a></li>
+                <li><a href="#es-9">Cambios al aviso</a></li>
+                <li><a href="#es-10">Autoridad</a></li>
+                <li><a href="#es-11">Aviso de salud</a></li>
+            </ol>
+        </div>
+
+        <p>Este aviso se emite conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, publicada en el Diario Oficial de la Federación el 20 de marzo de 2025 (en adelante, la "Ley"). Está dirigido a las personas titulares ubicadas en México que usan este sitio o mis servicios de asesoría en línea de nutrición y entrenamiento basados en plantas.</p>
+
+        <h2 id="es-1">1. Identidad y domicilio del responsable</h2>
+        <p>El responsable del tratamiento de sus datos personales es Edwin Herrera, persona física con actividad empresarial independiente (sole trader), con domicilio en Durham, Reino Unido. Ofrezco asesoría en línea de planes de nutrición y programación de entrenamiento, principalmente para personas vegetarianas y veganas.</p>
+        <p>Medio para oír y recibir notificaciones, y para ejercer sus derechos: <a class="js-email" data-u="edwinh.coaching" data-d="gmail.com" href="#"></a><noscript>edwinh.coaching [at] gmail [dot] com</noscript></p>
+
+        <h2 id="es-2">2. Datos personales que se tratan</h2>
+        <ul>
+            <li><strong>Datos de identificación y contacto:</strong> nombre y correo electrónico.</li>
+            <li><strong>Datos del cuestionario de ingreso (Formulario de Google):</strong> edad, medidas corporales, objetivos, alimentación e historial de entrenamiento.</li>
+            <li><strong>Datos personales sensibles (salud):</strong> lesiones, padecimientos o condiciones médicas, medicamentos y alergias. Son datos sensibles porque se refieren a su estado de salud presente o futuro.</li>
+            <li><strong>Datos de pago:</strong> el pago se realiza por PayPal o Buy Me a Coffee. Yo solo recibo su nombre, correo electrónico y el monto pagado; no tengo acceso a los datos de su tarjeta ni de su cuenta bancaria.</li>
+            <li><strong>Datos de navegación:</strong> información de uso del sitio recabada mediante Google Analytics (véase la sección 8) y datos técnicos como la dirección IP que procesa el servicio de alojamiento (GitHub Pages).</li>
+        </ul>
+        <p>Usted decide qué información de salud compartir; sin información relevante puede que no sea posible diseñar un plan seguro y adecuado.</p>
+
+        <h2 id="es-3">3. Finalidades del tratamiento</h2>
+        <h3>Finalidades primarias (necesarias para la relación con usted)</h3>
+        <ul>
+            <li>Responder sus consultas y mantener comunicación por correo electrónico.</li>
+            <li>Elaborar, entregar y ajustar sus planes de nutrición y entrenamiento.</li>
+            <li>Considerar su información de salud para que los planes sean seguros y adecuados.</li>
+            <li>Procesar y registrar pagos, y cumplir obligaciones contables y fiscales.</li>
+        </ul>
+        <h3>Finalidades secundarias (no indispensables)</h3>
+        <ul>
+            <li>Análisis estadístico del uso del sitio web para mejorarlo (Google Analytics).</li>
+            <li>Dar seguimiento posterior al servicio y recabar comentarios para mejorarlo.</li>
+        </ul>
+        <p><strong>Cómo negarse a las finalidades secundarias:</strong> puede hacerlo en cualquier momento, sin que ello afecte el servicio, escribiendo a <a class="js-email" data-u="edwinh.coaching" data-d="gmail.com" href="#"></a><noscript>edwinh.coaching [at] gmail [dot] com</noscript> con el asunto "Negativa a finalidades secundarias". Para el análisis del sitio, además, puede usar las opciones de la sección 8. Si no manifiesta su negativa, entenderé que consiente esas finalidades.</p>
+
+        <h2 id="es-4">4. Consentimiento</h2>
+        <p>Para tratar sus datos sensibles de salud, la Ley exige su consentimiento expreso (art. 8). Lo otorga al marcar la casilla obligatoria del cuestionario de ingreso, que declara que usted ha leído este aviso y consiente expresamente el tratamiento de sus datos de salud para las finalidades primarias. Si no marca la casilla, no podré recibir sus datos de salud ni elaborar un plan personalizado.</p>
+        <p>Usted puede revocar su consentimiento en cualquier momento, sin efectos retroactivos, conforme a la sección 6.</p>
+
+        <h2 id="es-5">5. Transferencias y remisiones</h2>
+        <p>Sus datos se tratan en el Reino Unido y en los países donde operan los proveedores siguientes, principalmente Estados Unidos, es decir, fuera de México.</p>
+        <div class="table-wrap"><table>
+            <thead><tr><th>Tercero</th><th>Para qué</th><th>Naturaleza</th></tr></thead>
+            <tbody>
+                <tr><td>Google (Formularios, Gmail, Analytics)</td><td>Recibir el cuestionario, correos, estadísticas del sitio</td><td>Proveedor que trata datos por mi cuenta (remisión a un encargado): no requiere su consentimiento</td></tr>
+                <tr><td>GitHub (GitHub Pages)</td><td>Alojar el sitio web</td><td>Proveedor que trata datos por mi cuenta (remisión): no requiere su consentimiento</td></tr>
+                <tr><td>PayPal y Buy Me a Coffee</td><td>Cobrar el servicio</td><td>Usted les entrega directamente sus datos de pago y operan bajo sus propios avisos de privacidad; yo solo recibo nombre, correo y monto. No les comunico sus datos de salud.</td></tr>
+            </tbody>
+        </table></div>
+        <p>No vendo ni comunico sus datos de salud a ningún tercero con fines propios de este. Podré comunicar datos a autoridades cuando una disposición legal lo exija. Si en el futuro realizara una transferencia que requiera su consentimiento, se lo solicitaré antes de hacerla y este aviso incluirá la cláusula correspondiente para que usted acepte o rechace la transferencia (art. 35).</p>
+
+        <h2 id="es-6">6. Derechos ARCO, revocación del consentimiento</h2>
+        <p>Usted tiene derecho a <strong>acceder</strong> a sus datos y conocer las condiciones del tratamiento, <strong>rectificarlos</strong> si son inexactos, incompletos o están desactualizados, <strong>cancelarlos</strong> y <strong>oponerse</strong> a su tratamiento por causa legítima o para finalidades específicas (derechos ARCO), así como a <strong>revocar</strong> el consentimiento que me haya otorgado.</p>
+        <p><strong>Cómo ejercerlos:</strong> envíe un correo electrónico a <a class="js-email" data-u="edwinh.coaching" data-d="gmail.com" href="#"></a><noscript>edwinh.coaching [at] gmail [dot] com</noscript> indicando:</p>
+        <ul>
+            <li>su nombre y un medio para comunicarle la respuesta;</li>
+            <li>documentos o información que acrediten su identidad (o la representación, si actúa por otra persona);</li>
+            <li>la descripción clara y precisa del derecho que desea ejercer y de los datos a los que se refiere;</li>
+            <li>cualquier elemento que facilite localizar sus datos.</li>
+        </ul>
+        <p><strong>Plazos:</strong> le comunicaré la determinación adoptada en un máximo de 20 días hábiles contados desde la recepción de la solicitud y, si procede, la haré efectiva dentro de los 15 días hábiles siguientes. Estos plazos pueden ampliarse una sola vez por un periodo igual cuando las circunstancias lo justifiquen (art. 31). El ejercicio de sus derechos es gratuito, salvo gastos justificados de envío o reproducción.</p>
+        <p>Si revoca su consentimiento para tratar datos de salud, puede que ya no sea posible continuar con un plan personalizado; la revocación no afecta tratamientos anteriores. Algunas obligaciones, como la conservación de registros fiscales, pueden impedir cancelar ciertos datos hasta que concluya el plazo legal.</p>
+        <p><strong>Conservación:</strong> conservo los datos de salud y de planes durante la asesoría y 12 meses adicionales, y después los elimino; los registros financieros, 6 años por exigencia de la autoridad fiscal británica; y las consultas que no se convierten en asesoría, 12 meses.</p>
+
+        <h2 id="es-7">7. Limitar el uso o divulgación de sus datos</h2>
+        <p>Además de lo anterior, puede solicitar en cualquier momento que limite el uso o divulgación de sus datos, por ejemplo dejar de recibir mensajes de seguimiento, escribiendo al correo indicado en la sección 1.</p>
+
+        <h2 id="es-8">8. Cookies y tecnologías de rastreo</h2>
+        <p>Este sitio utiliza Google Analytics 4 (ID G-MHE21ZFJ51), que instala las cookies <code>_ga</code> y <code>_ga_&lt;ID&gt;</code>, con vigencia de hasta 2 años, para obtener estadísticas de uso. Actualmente el sitio no muestra un banner de cookies, por lo que la analítica se activa al cargar la página. Puede deshabilitarla bloqueando o eliminando cookies en la configuración de su navegador, instalando el <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer">complemento de inhabilitación de Google Analytics</a> o escribiéndome. El sitio también guarda su preferencia de idioma en el almacenamiento local de su navegador; no se envía a mí.</p>
+
+        <h2 id="es-9">9. Cambios al aviso</h2>
+        <p>Este aviso puede modificarse. Publicaré la versión vigente en esta misma página, con su fecha de actualización, y cuando el cambio sea relevante se lo informaré por correo electrónico si es posible.</p>
+
+        <h2 id="es-10">10. Autoridad</h2>
+        <p>Si considera que su derecho a la protección de datos personales ha sido vulnerado, puede acudir a la Secretaría Anticorrupción y Buen Gobierno, autoridad en la materia que sustituyó al INAI conforme a la Ley.</p>
+
+        <h2 id="es-11">11. Aviso de salud</h2>
+        <div class="note"><p>Mi asesoría no constituye consejo médico ni sustituye a un médico, nutriólogo clínico u otro profesional de la salud. Si tiene alguna condición médica o lesión, está embarazada o toma medicamentos, consulte a un profesional calificado antes de cambiar su alimentación o iniciar un programa de entrenamiento.</p></div>
+    </article>
+    </main>
+
+    <footer>
+        <p id="footer-text">Plant-Based Nutrition &amp; Training © 2026. All rights reserved.</p>
+        <p><a id="footer-back" href="index.html">&larr; Back</a></p>
+    </footer>
+
+    <script>
+    (function () {
+        // Obfuscated email
+        document.querySelectorAll('.js-email').forEach(function (a) {
+            var addr = a.getAttribute('data-u') + '@' + a.getAttribute('data-d');
+            a.setAttribute('href', 'mailto:' + addr);
+            a.textContent = addr;
+        });
+
+        var lang = 'en';
+        try { lang = localStorage.getItem('language') === 'es' ? 'es' : 'en'; } catch (e) {}
+        if (location.hash === '#aviso-es' || /^#es-/.test(location.hash)) lang = 'es';
+
+        var en = document.getElementById('privacy-en');
+        var es = document.getElementById('aviso-es');
+        var btn = document.getElementById('lang-btn');
+        var T = {
+            en: { back: '← Back', toggle: 'ES', footer: 'Plant-Based Nutrition & Training © 2026. All rights reserved.', title: 'Privacy Policy' },
+            es: { back: '← Volver', toggle: 'EN', footer: 'Nutrición y Entrenamiento Basado en Plantas © 2026. Todos los derechos reservados.', title: 'Aviso de Privacidad' }
+        };
+
+        function apply() {
+            en.hidden = lang !== 'en';
+            es.hidden = lang !== 'es';
+            document.documentElement.lang = lang;
+            document.title = T[lang].title + ' | Plant-Based Nutrition & Training';
+            document.getElementById('back-link').textContent = T[lang].back;
+            document.getElementById('footer-back').textContent = T[lang].back;
+            document.getElementById('footer-text').textContent = T[lang].footer;
+            btn.textContent = T[lang].toggle;
+            btn.setAttribute('aria-label', lang === 'en' ? 'Cambiar a español' : 'Switch to English');
+        }
+
+        btn.addEventListener('click', function () {
+            lang = lang === 'en' ? 'es' : 'en';
+            try { localStorage.setItem('language', lang); } catch (e) {}
+            window.scrollTo(0, 0);
+            apply();
+        });
+
+        apply();
+        if (location.hash.length > 1) {
+            var t = document.getElementById(location.hash.slice(1));
+            if (t) t.scrollIntoView();
+        }
+    })();
+    </script>
+</body>
+</html>
